@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     flash('error', 'Please enter participants phone number', 'alert alert-danger');
   }elseif (strlen($phone) > 11 ) {
     flash('error', 'Invalid Phone Number, 11 digits allowed', 'alert alert-danger');
-  }elseif (strlen($phone) < 11 ) {
+  }elseif (strlen($phone) < 10 ) {
     flash('error', 'Invalid Phone Number, 11 digits allowed', 'alert alert-danger');
   }elseif (empty($local_assembly)) {
     flash('error', 'Please enter participants denomination..', 'alert alert-danger');

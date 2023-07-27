@@ -83,12 +83,12 @@ transform: translateX(-100%);
   <header class="header">
       <!-- Hero -->
       <div class="hero pt-1 pb-4">
-        <div class="cssmarquee container p-2">
+        <div class="cssmarquee container p-3">
           <i class="fas fa-bullhorn fa-flip-horizontal fa-3x text-primary" style="position: absolute; top: 0;right: 0;z-index: 10;"></i>
-          <h1 class="fst-italic lead text-primary"> God's Great visitation is here again!!</h1>
+          <h1 class="fst-italic lead text-primary fw-semibold" style="font-size: 17px;margin-top: -3px;"> God's Great visitation is here again!!</h1>
         </div> 
         <div class="container">
-          <div class="pt-2 pb-5">
+          <div class="pt-2 pb-3">
             <p class="lead fw-semibold">Greater Bethesda 2023 <br><span class="badge bg-primary">theme</span></p>
             <h1 class="display-1 pb-2 fw-bold">The Glory of the Gospel</h1>
             <p class=""><span class="" style="font-size: 12px;"> Thursday <span class="fw-bold"> 10th August</span> -- Saturday <span class="fw-bold"> 12th August</span> 2023</span></p>
@@ -121,7 +121,7 @@ transform: translateX(-100%);
       </svg>
     </header>
   <!-- Statement -->
-  <section class="statement my-5">
+  <section class="statement my-2">
     <div class="container">
       <div class="row">
         <div class="col-12">

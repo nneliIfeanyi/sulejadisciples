@@ -105,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
               </div>
               <div class="d-grid">
                 <button type="submit" class="btn btn-primary text-white mt-3">
-                  Send
+                  <i class="fa fa-paper-plane fa-2x" arial-hidden="true"></i> Send
                 </button>
               </div>
             </form>

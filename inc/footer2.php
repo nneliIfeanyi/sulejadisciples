@@ -8,7 +8,7 @@
                 <a href="index.php" class="nav-link link-light">Home</a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link link-light">Articles</a>
+                <a href="articles.php" class="nav-link link-light">Articles</a>
               </li>
               <li class="nav-item">
                 <a href="contact.php" class="nav-link link-light">Contact Us</a>
