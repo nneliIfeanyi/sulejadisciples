@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="keywords" content="Discipleship, discipleship works, discipleship labour, discipleship in Suleja Niger state Nigeria, Suleja disciples, Greater Bethesda, Pool of Bethesda,">
+  <meta name="description" content="We are a small group of nobodys trusting only in the merit of our Lord Jesus whom alone is Somebody...">
   <meta name="author" content="Nneli Ifeanyi Victor">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
