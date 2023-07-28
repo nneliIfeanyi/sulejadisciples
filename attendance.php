@@ -69,9 +69,9 @@
                <tr class="">
                 <th><b>S/N</b></th>
                  <th><b>Names</b></th>
-                 <th><b>Day one</b></th>
-                 <th><b>Day two</b></th>
-                 <th><b>Day three</b></th>
+                 <th><b>Day 1</b></th>
+                 <th><b>Day 2</b></th>
+                 <th><b>Day 3</b></th>
                </tr>
             </thead>
 
@@ -79,7 +79,7 @@
                <?php 
               
                  $year = date('Y');
-                 $sql = "SELECT * FROM participants WHERE year = '$year'";
+                 $sql = "SELECT * FROM participants WHERE year = '$year' ORDER BY id DESC ";
                  $query = mysqli_query($conn, $sql);
                  $info = mysqli_num_rows($query);
                  if($info > 0) {
