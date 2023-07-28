@@ -39,9 +39,9 @@
                <tr class="">
                 <th><b>S/N</b></th>
                  <th><b>Names</b></th>
-                 <th><b>Day one</b></th>
-                 <th><b>Day two</b></th>
-                 <th><b>Day three</b></th>
+                 <th><b>Day 1</b></th>
+                 <th><b>Day 2</b></th>
+                 <th><b>Day 3</b></th>
                </tr>
             </thead>
 
@@ -61,33 +61,59 @@
                   
                   ?>
                   <tr class="">
+                    <style type="text/css">
+                      .btn-group a{
+                        text-decoration: none;
+                      }
+                      .btn-group a:hover{
+                        background: inherit;
+                        color: inherit;
+                        cursor: pointer;
+                      }
+                      
+                    </style>
                     <th><?= $numbering;?></th>
                     <td><?=$name?></td>
                     <td>
                      <?php if(empty($day_one)):?>
-                      <a href="attendance.php?id=<?=$id?>&day=day_one" class="btn btn-outline-success btn-sm"><i class="fa fa-check" aria-hidden="true"></i>mark</a>
-                      <?php else:?>
-                        <div class="d">
-                        <a class="btn btn-danger btn-sm"><i class="fa fa-check" aria-hidden="true"></i> marked</a>
-                        <a href="attendance.php?id2=<?=$id?>&day=day_one" class="btn btn-warning btn-sm"><i class="fa fa-times" aria-hidden="true"></i> reverse</a>
+                      <div class="btn-group">
+                        <a href="attendance.php?id=<?=$id?>&name=<?=$full_name?>&day=day_one" class="badge bg-danger"><i class="fa fa-times" aria-hidden="true"></i> Absent</a>
                       </div>
+                      <?php else:?>
+                        <div class="btn-group">
+                          <a class="badge bg-success mark"><i class="fa fa-check" aria-hidden="true"></i> present</a>
+                          <!--
+                            Reverse the attendace-->
+                            <a href="attendance.php?id2=<?=$id?>&name=<?=$full_name?>&day=day_one" class="badge bg-warning"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        </div>
                       <?php endif;?>
                     </td>
                     <td>
                       <?php if(empty($day_two)):?>
-                      <a href="attendance.php?id=<?=$id?>&day=day_two" class="btn btn-outline-success btn-sm"><i class="fa fa-check" aria-hidden="true"></i>mark</a>
+                        <div class="btn-group">
+                          <a href="attendance.php?id=<?=$id?>&name=<?=$full_name?>&day=day_two" class="badge bg-danger"><i class="fa fa-times" aria-hidden="true"></i> Absent</a>
+                        </div>
                       <?php else:?>
-                        <a class="btn btn-danger btn-sm"><i class="fa fa-check" aria-hidden="true"></i> marked</a>
-                        <a href="attendance.php?id2=<?=$id?>&day=day_two" class="btn btn-warning btn-sm"><i class="fa fa-times" aria-hidden="true"></i> reverse</a>
+                        <div class="btn-group">
+                            <a class="badge bg-success"><i class="fa fa-check" aria-hidden="true"></i> present</a>
+                        <!--Reverse the attendace-->
+                            <a href="attendance.php?id2=<?=$id?>&name=<?=$full_name?>&day=day_two" class="badge bg-warning"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        </div>
                       <?php endif;?>
+                    </td> 
                     <td>
                       <?php if(empty($day_three)):?>
-                      <a href="attendance.php?id=<?=$id?>&day=day_three" class="btn btn-outline-success btn-sm"><i class="fa fa-check" aria-hidden="true"></i>mark</a>
+                        <div class="btn-group">
+                          <a href="attendance.php?id=<?=$id?>&name=<?=$full_name?>&day=day_three" class="badge bg-danger"><i class="fa fa-times" aria-hidden="true"></i> Absent</a>
+                        </div>
                       <?php else:?>
-                        <a class="btn btn-danger btn-sm"><i class="fa fa-check" aria-hidden="true"></i> marked</a>
-                        <a href="attendance.php?id2=<?=$id?>&day=day_three" class="btn btn-warning btn-sm"><i class="fa fa-times" aria-hidden="true"></i> reverse</a>
+                        <div class="btn-group">
+                            <a class="badge bg-success"><i class="fa fa-check" aria-hidden="true"></i> present</a>
+                        <!--Reverse the attendace-->
+                            <a href="attendance.php?id2=<?=$id?>&name=<?=$full_name?>&day=day_three" class="badge bg-warning"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        </div>
                       <?php endif;?>
-                    </td>                    
+                    </td>                      
 
                   </tr>
                   <?php
