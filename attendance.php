@@ -4,21 +4,34 @@
   if(isset($_GET['id']) && isset($_GET['day']) ){
     $id = ($_GET['id']);
     $day = $_GET['day'];
-    $arrival_time = date('h:s:A');
+    $arrival_time = date('h:i:A');
     if ($day == 'day_one') {
       $sql = "UPDATE participants SET day_one = '$arrival_time' WHERE id = '$id'";
       $query = mysqli_query($conn, $sql);
-      /*if ($query) {
+      if ($query) {
+        flash('success','Attendance marked successfully');
         ?>
           <meta http-equiv="refresh" content="1; attendance.php">
         <?php
-      }*/
+      }
     }elseif($day == 'day_two') {
       $sql = "UPDATE participants SET day_two = '$arrival_time' WHERE id = '$id'";
       $query = mysqli_query($conn, $sql);
+      if ($query) {
+        flash('success','Attendance marked successfully');
+        ?>
+          <meta http-equiv="refresh" content="1; attendance.php">
+        <?php
+      }
     }elseif ($day == 'day_three') {
       $sql = "UPDATE participants SET day_three = '$arrival_time' WHERE id = '$id'";
       $query = mysqli_query($conn, $sql);
+      if ($query) {
+        flash('success','Attendance marked successfully');
+        ?>
+          <meta http-equiv="refresh" content="1; attendance.php">
+        <?php
+      }
     }
 //Reverse Attendance
   }elseif(isset($_GET['id2']) && isset($_GET['day']) ){
@@ -27,13 +40,31 @@
 
     if ($day == 'day_one') {
       $sql = "UPDATE participants SET day_one = '' WHERE id = '$id'";
-        $query = mysqli_query($conn, $sql);
+      $query = mysqli_query($conn, $sql);
+      if ($query) {
+        flash('success','Attendance reversed successfully');
+        ?>
+          <meta http-equiv="refresh" content="1; attendance.php">
+        <?php
+      }
     }elseif($day == 'day_two') {
       $sql = "UPDATE participants SET day_two = '' WHERE id = '$id'";
-        $query = mysqli_query($conn, $sql);
+      $query = mysqli_query($conn, $sql);
+      if ($query) {
+        flash('success','Attendance reversed successfully');
+        ?>
+          <meta http-equiv="refresh" content="1; attendance.php">
+        <?php
+      }
     }elseif ($day == 'day_three') {
       $sql = "UPDATE participants SET day_three = '' WHERE id = '$id'";
-        $query = mysqli_query($conn, $sql);
+      $query = mysqli_query($conn, $sql);
+      if ($query) {
+        flash('success','Attendance reversed successfully');
+        ?>
+          <meta http-equiv="refresh" content="1; attendance.php">
+        <?php
+      }
     }
 
   }

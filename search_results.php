@@ -1,9 +1,9 @@
 <?php require 'inc/header.php'; ?>
 <?php if(isset($_SESSION['username'])):
-
+  $year = date('Y');
   if (isset($_GET['surname'])) {
     $search_input = trim($_GET['surname']);
-    $sql = "SELECT * FROM participants WHERE surname = '$search_input'";
+    $sql = "SELECT * FROM participants WHERE surname = '$search_input' AND year = '$year' ";
     $query = mysqli_query($conn, $sql);
   }
 

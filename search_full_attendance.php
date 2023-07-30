@@ -4,7 +4,7 @@
   if (isset($_GET['surname'])) {
     $search_input = trim($_GET['surname']);
     $year = date('Y');
-    $sql = "SELECT * FROM participants WHERE surname = '$search_input' AND year = '$year' ";
+    $sql = "SELECT * FROM participants WHERE surname = '$search_input' AND year = '$year' AND day_one != '' AND day_two != '' AND day_three != '' ";
     $query = mysqli_query($conn, $sql);
   }
 
@@ -19,10 +19,10 @@
     <div class=" mx-auto">
       <div class="card bg-light px-2 my-3">
         <p class="lead fw-semibold">Greater Bethesda 2023</p>
-        <h2 class="text-success h5 card-title">Search results for all registered participants</h2>
+        <h2 class="text-success h5 card-title">Search results on full attendance</h2>
           <div class="row">
             <div class="col-md-6">
-              <form action="search.php" method="get" class="modal-content modal-body border-0 p-0">
+              <form action="search_full_attendance.php" method="get" class="">
                 <div class="input-group mb-2">
                   <input type="text" class="form-control" name="surname" placeholder="Search More ...">
                   <button type="submit" class="input-group-text bg-success text-light">
@@ -32,7 +32,7 @@
               </form>
             </div>
             <div class="col-12 py-2">
-            <a href="comprehensive.php" class="btn btn-light"><i class="fa fa-backward" aria-hidden="true"></i> Go Back</a>
+            <a href="full_participants.php" class="btn btn-light"><i class="fa fa-backward" aria-hidden="true"></i> Go Back</a>
           </div>
           </div>
         <div class="card-body">

@@ -1,6 +1,10 @@
 <?php require 'inc/header.php'; ?>
 <?php if(isset($_SESSION['username'])):
-
+$year = date('Y');
+$sql = "SELECT * FROM participants WHERE year = '$year'";
+$query = mysqli_query($conn, $sql);
+$info = mysqli_num_rows($query);
+$total_participants = $info;
 ?>
 <div>
  <div class="row">
@@ -12,6 +16,7 @@
       <div class="card bg-light px-2 my-3">
        <p class="lead fw-semibold">Greater Bethesda 2023</p>
         <h2 class="text-success card-title">A Comprehensive List Of All Registered</h2>
+         <p class="lead">Total of <span class="bg-dark text-white p-1 rounded-circle"><?=$total_participants?></span> participants</p>
           <div class="row">
             <div class="col-md-6">
               <form action="search.php" method="get" class="">
@@ -49,11 +54,6 @@
 
              <tbody>
                <?php 
-              
-                 $year = date('Y');
-                 $sql = "SELECT * FROM participants WHERE year = '$year'";
-                 $query = mysqli_query($conn, $sql);
-                 $info = mysqli_num_rows($query);
                  if($info > 0) {
                   $numbering = 1;
                     while($result = mysqli_fetch_array($query)){

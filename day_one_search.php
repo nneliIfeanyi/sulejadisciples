@@ -1,59 +1,56 @@
 <?php require 'inc/header.php'; ?>
-<?php if(isset($_SESSION['username'])): 
-$year = date('Y');
-$sql = "SELECT * FROM participants WHERE year = '$year' AND day_one != '' ";
-$query = mysqli_query($conn, $sql);
-$info = mysqli_num_rows($query);
-$total_participants = $info;
+<?php if(isset($_SESSION['username'])):
 
-  ?>
+  if (isset($_GET['surname'])) {
+    $search_input = trim($_GET['surname']);
+    $year = date('Y');
+    $sql = "SELECT * FROM participants WHERE surname = '$search_input' AND year = '$year' AND day_one != '' ";
+    $query = mysqli_query($conn, $sql);
+  }
+
+
+?>
+<div>
  <div class="row">
    <div class="col-md-3">
     <?php include 'inc/nav.php'; ?>
    </div>
    <div class="col-md-9">
+    <div class=" mx-auto">
       <div class="card bg-light px-2 my-3">
-        <div class="row p-2">
-          <div class="col-md-6">
-            <p class="lead fw-semibold">Greater Bethesda 2023 </p>
-             <h2 class="text-success card-title">Day one Participants</h2>
-             <p class="lead">Total of <span class="bg-dark text-white p-1 rounded-circle"><?=$total_participants?></span> participants</p>
-          </div>
+        <p class="lead fw-semibold">Greater Bethesda 2023</p>
+        <h2 class="text-success h5 card-title">Search results on day 1 attendance</h2>
           <div class="row">
             <div class="col-md-6">
               <form action="day_one_search.php" method="get" class="">
                 <div class="input-group mb-2">
-                  <input type="text" class="form-control" name="surname" placeholder="Search by surname ...">
-                  <button type="submit" class="input-group-text px-3 bg-success text-light">
-                    <i class="fa fa-fw fa-search text-white"></i> Search
+                  <input type="text" class="form-control" name="surname" placeholder="Search More ...">
+                  <button type="submit" class="input-group-text bg-success text-light">
+                  <i class="fa fa-fw fa-search text-white"></i> Search
                   </button>
                 </div>
               </form>
             </div>
+            <div class="col-12 py-2">
+            <a href="day_one.php" class="btn btn-light"><i class="fa fa-backward" aria-hidden="true"></i> Go Back</a>
           </div>
-          <div class="col-md-6 my-auto">
-            <div class="dropdown">
-              <a class="dropdown-toggle btn btn-outline-success fw-bold" data-bs-toggle="dropdown">Sort Participants</a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a href="full_participants.php" class="dropdown-item">Full Participants</a></li>
-                <li><a href="additions1.php" class="dropdown-item">Day two Additions</a></li>
-                <li><a href="additions2.php" class="dropdown-item">Day One Absents</a></li>
-              </ul>
-            </div>
           </div>
-        </div>
+        <div class="card-body">
           <table class="table table-light">
             <thead>
                <tr class="">
                 <th><b>S/N</b></th>
                  <th><b>Names</b></th>
-                 <th><b>Time Arrived</b></th>
+                 <th><b>Day one</b></th>
+                 <th><b>Day two</b></th>
+                 <th><b>Day three</b></th>
                </tr>
             </thead>
 
              <tbody>
                <?php 
-                if($info > 0) {
+                 $info = mysqli_num_rows($query);
+                 if($info > 0) {
                   $numbering = 1;
                   while($result = mysqli_fetch_array($query)){
                     $other_names = $result['other_names'];
@@ -83,9 +80,14 @@ $total_participants = $info;
                ?>
              </tbody>
            </table>
-           </div>
         </div>
+        
+
       </div>
+    </div>
+   </div>
+ </div>
+</div>
 <?php else : ?>
   
   <div class="py-4 px-2 bg-light">

@@ -1,5 +1,11 @@
 <?php require 'inc/header.php'; ?>
-<?php if(isset($_SESSION['username'])): ?>
+<?php if(isset($_SESSION['username'])): 
+$year = date('Y');
+$sql = "SELECT * FROM participants WHERE year = '$year' AND day_one != '' AND day_two != '' AND day_three != '' ";
+$query = mysqli_query($conn, $sql);
+$info = mysqli_num_rows($query);
+$total_participants = $info;
+?>
  <div class="row">
    <div class="col-md-3">
     <?php include 'inc/nav.php'; ?>
@@ -8,6 +14,20 @@
       <div class="card bg-light px-2 my-3">
         <p class="lead fw-semibold">Greater Bethesda 2023</p>
         <h2 class="text-success card-title">List of those with complete Attendance</h2>
+        <p class="lead">Total of <span class="bg-dark text-white p-1 rounded-circle"><?=$total_participants?></span> participants</p>
+
+         <div class="row">
+            <div class="col-md-6">
+              <form action="search_full_attendance.php" method="get" class="">
+                <div class="input-group mb-2">
+                  <input type="text" class="form-control" name="surname" placeholder="Search by surname ...">
+                  <button type="submit" class="input-group-text px-3 bg-success text-light">
+                    <i class="fa fa-fw fa-search text-white"></i> Search
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         
           <table class="table table-light mt-2">
             <thead>
@@ -21,12 +41,7 @@
             </thead>
 
              <tbody>
-               <?php 
-                $year = date('Y');
-                 $sql = "SELECT * FROM participants WHERE year = '$year' AND day_one != '' AND day_two != '' AND day_three != '' ";
-                 $query = mysqli_query($conn, $sql);
-                 $info = mysqli_num_rows($query);
-                 
+               <?php  
                  if($info > 0) {
                   $numbering = 1;
                     while($result = mysqli_fetch_array($query)){

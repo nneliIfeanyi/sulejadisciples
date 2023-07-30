@@ -1,5 +1,12 @@
 <?php require 'inc/header.php'; ?>
-<?php if(isset($_SESSION['username'])): ?>
+<?php if(isset($_SESSION['username'])): 
+$year = date('Y');
+$sql = "SELECT * FROM participants WHERE year = '$year' AND day_three != '' ";
+$query = mysqli_query($conn, $sql);
+$info = mysqli_num_rows($query);
+$total_participants = $info;
+
+  ?>
  <div class="row">
    <div class="col-md-3">
     <?php include 'inc/nav.php'; ?>
@@ -10,6 +17,7 @@
           <div class="col-md-6">
             <p class="lead fw-semibold">Greater Bethesda 2023 </p>
              <h2 class="text-success card-title">Day Three Participants</h2>
+              <p class="lead">Total of <span class="bg-dark text-white p-1 rounded-circle"><?=$total_participants?></span> participants</p>
           </div>
           <div class="col-md-6 my-auto">
             <div class="dropdown">
@@ -33,11 +41,6 @@
 
              <tbody>
                <?php 
-              
-                 $year = date('Y');
-                 $sql = "SELECT * FROM participants WHERE year = '$year' AND day_three != '' ";
-                 $query = mysqli_query($conn, $sql);
-                 $info = mysqli_num_rows($query);
                  if($info > 0) {
                   $numbering = 1;
                     while($result = mysqli_fetch_array($query)){

@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Africa/Lagos');
 session_start();
 require 'config.php';
 // Flash message helper
@@ -49,8 +50,8 @@ function login_pass($conn,$username,$password){
 }
 
 
- function register_participant($conn,$surname,$other_names,$phone,$local_assembly,$invited_by,$reg_date,$reg_time,$year){
-    $sql = "INSERT INTO participants(surname,other_names,phone,church,referee,reg_date,reg_time,year) VALUES('$surname','$other_names','$phone','$local_assembly','$invited_by','$reg_date','$reg_time','$year')";
+ function register_participant($conn,$surname,$other_names,$phone,$local_assembly,$invited_by,$reg_date,$reg_time,$year,$day_one){
+    $sql = "INSERT INTO participants(surname,other_names,phone,church,referee,reg_date,reg_time,year,day_one) VALUES('$surname','$other_names','$phone','$local_assembly','$invited_by','$reg_date','$reg_time','$year','$day_one' )";
     $query = mysqli_query($conn, $sql);
     if ($query) {
       return true;
