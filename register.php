@@ -53,10 +53,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <div class="col-md-9 mx-auto">
     <div class="">
       <div class="card card-body bg-light my-1">
-         <p class="lead fw-semibold">Greater Bethesda 2023 </p>
-        <h2 class="text-primary">Registration Form</h2>
          <?php flash('error'); ?>
          <?php flash('success');?>
+         <p class="lead fw-semibold">Greater Bethesda 2023 </p>
+        <h2 class="text-primary">Registration Form</h2>
          <p>Please use the form below to register.</p>
 
         <form action="register.php" method="post">
