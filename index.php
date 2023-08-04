@@ -24,62 +24,6 @@ transform: translateX(-100%);
 }
 }
 </style>
-<?php if(isset($_SESSION['username'])): ?>
-
- <div class="row">
-   <div class="col-md-3">
-    <?php include 'inc/nav.php'; ?>
-   </div>
-   <div class="col-md-9">
-    <div class=" mx-auto">
-      <div class="card card-body bg-light my-3">
-        <?php flash('error'); ?>
-        <?php flash('success');?>
-        <p class="text-success lead">Welcome Back! Admin</p>
-        <p class="lead fw-semibold">Greater Bethesda 2023 <br><span class="badge bg-primary">theme</span></p>
-        <h1 class="display-3 fw-bold">The Glory of the Gospel</h1>
-        <p>Please use the form below to register individual participants.</p>
-
-        <form action="register.php" method="post">
-          <div class="form-group">
-              <label>Surname:<sup class="text-danger">*</sup></label>
-              <input type="text" name="surname" class="form-control form-control-lg <?php echo (!empty($data['phone_err'])) ? 'is-invalid' : ''; ?>" value="">
-              <span class="invalid-feedback"></span>
-          </div>    
-          <div class="form-group mb-2">
-              <label>Other Names:<sup class="text-danger">*</sup></label>
-              <input type="text" name="other_names" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="">
-              <span class="invalid-feedback"></span>
-          </div>
-          <div class="form-group mb-2">
-              <label>Phone Number:<sup class="text-danger">*</sup></label>
-              <input type="number" name="phone" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="">
-              <span class="invalid-feedback"></span>
-          </div>
-          <div class="form-group mb-2">
-              <label>Local Assembly:<sup class="text-danger">*</sup></label>
-              <input type="text" name="church" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="">
-              <span class="invalid-feedback"></span>
-          </div>
-
-          <div class="form-group">
-              <label>Invited by:</label>
-              <input type="text" name="referee" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="">
-              <span class="invalid-feedback"></span>
-          </div>
-          <div class="form-row my-4">
-            <div class="col-6 mb-2">
-              <input type="submit" class="btn btn-success px-5" value="Register">
-            </div>
-          </div>
-        </form>
-
-      </div>
-    </div>
-   </div>
- </div>
- <?php include 'inc/footer.php'; ?>
-<?php else : ?>
   <header class="header">
       <!-- Hero -->
       <div class="hero pt-1 pb-4">
@@ -198,7 +142,4 @@ transform: translateX(-100%);
       </div>
     </section>
 <?php include 'inc/footer2.php'; ?>
-   
-
-<?php endif;?>
 
