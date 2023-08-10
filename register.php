@@ -19,8 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nameErr = 'Surname is required';
   }elseif (empty($local_assembly)) {
     flash('error', 'Please enter participants denomination..', 'alert alert-danger');
-  }elseif (check($conn,$phone)) {
-    flash('error', 'A user exist with same phone number!', 'alert alert-danger');
   }else{
 
     if (empty($invited_by)) {
