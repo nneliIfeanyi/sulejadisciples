@@ -17,12 +17,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if(empty($surname) || empty($other_names)){
     flash('error', 'Please enter participants fullname..', 'alert alert-danger');
     $nameErr = 'Surname is required';
-  }elseif (empty($phone)) {
-    flash('error', 'Please enter participants phone number', 'alert alert-danger');
-  }elseif (strlen($phone) > 11 ) {
-    flash('error', 'Invalid Phone Number, 11 digits allowed', 'alert alert-danger');
-  }elseif (strlen($phone) < 10 ) {
-    flash('error', 'Invalid Phone Number, 11 digits allowed', 'alert alert-danger');
   }elseif (empty($local_assembly)) {
     flash('error', 'Please enter participants denomination..', 'alert alert-danger');
   }elseif (check($conn,$phone)) {
