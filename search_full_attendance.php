@@ -44,6 +44,8 @@
                  <th><b>Day one</b></th>
                  <th><b>Day two</b></th>
                  <th><b>Day three</b></th>
+                 <th><b>Action</b></th>
+
                </tr>
             </thead>
 
@@ -96,6 +98,9 @@
                            <a class="badge text-dark fw-semibold"><?=$day_three?></a>
                        <?php endif;?>
                     </td>
+                    d>
+                    <a href="attendance.php?id=<?=$id?>" class="btn btn-sm">Delete</a>
+                   </td>
                    
                   </tr>
                   <?php
