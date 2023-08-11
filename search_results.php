@@ -42,8 +42,6 @@
                  <th><b>Day 1</b></th>
                  <th><b>Day 2</b></th>
                  <th><b>Day 3</b></th>
-                 <th><b>Action</b></th>
-
                </tr>
             </thead>
 
@@ -115,10 +113,7 @@
                             <a href="attendance.php?id2=<?=$id?>&name=<?=$full_name?>&day=day_three" class="badge bg-warning"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
                       <?php endif;?>
-                    </td> 
-                    <td>
-                      <a href="attendance.php?id=<?=$id?>" class="btn btn-sm">Delete</a>
-                    </td>                     
+                    </td>                      
 
                   </tr>
                   <?php
