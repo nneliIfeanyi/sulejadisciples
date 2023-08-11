@@ -13,7 +13,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $year = date('Y');
   $day_one = $reg_time;
 
-// Check for email
   if(empty($surname) || empty($other_names)){
     flash('error', 'Please enter participants fullname..', 'alert alert-danger');
     $nameErr = 'Surname is required';
@@ -29,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if ($register) {
        flash('success','Registration Successful.. Register Another');
       ?>
-      <meta http-equiv='refresh' content='2.5; register.php'>
+      <meta http-equiv='refresh' content='2.5; attendance.php'>
       <?php
       }
   }
