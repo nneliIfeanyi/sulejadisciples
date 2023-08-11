@@ -1,29 +1,6 @@
 <?php require 'inc/header.php'; ?>
 <?php if(isset($_SESSION['username'])):
 
-
-//Delete 
-
-if (isset($_GET['id']) ) {
-  
-  $id = $_GET['id'];
-  
-
-  $sql = "DELETE FROM participants WHERE id = '$id' LIMIT 1";
-  $query = mysqli_query($conn, $sql);
-
-  if ($query) {
-    
-    flash('success','Delete Successful..');
-      ?>
-      <meta http-equiv='refresh' content='2.5; attendance.php'>
-      <?php
-
-  }else{
-    die('An Error Occured');
-  }
-
-}
 //Mark Attendance
   if(isset($_GET['id']) && isset($_GET['day']) ){
     $id = ($_GET['id']);
@@ -189,7 +166,7 @@ if (isset($_GET['id']) ) {
                       <?php endif;?>
                     </td> 
                    <td>
-                    <a href="attendance.php?id=<?=$id?>" class="btn btn-sm">Delete</a>
+                    <a href="delete.php?id=<?=$id?>" class="btn btn-sm">Delete</a>
                    </td>                 
 
                   </tr>
