@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       $invited_by = 'Suleja Disciple';
     }
 
-    $register = register_participant($conn,$surname,$other_names,$phone,$local_assembly,$invited_by,$reg_date,$reg_time,$year,$day_one);
+    $register = register_participant($conn,$surname,$other_names,$phone,$local_assembly,$invited_by,$reg_date,$reg_time,$year);
     if ($register) {
        flash('success','Registration Successful.. Register Another');
       ?>

@@ -166,7 +166,8 @@
                       <?php endif;?>
                     </td> 
                    <td>
-                    <a href="delete.php?id=<?=$id?>" class="btn btn-sm">Delete</a>
+                    <a href="edit.php?id=<?=$id?>" class="fw-bold text-success me-2">Edit</a>
+                    <a href="delete.php?id=<?=$id?>" class="fw-bold text-danger">Delete</a>
                    </td>                 
 
                   </tr>
