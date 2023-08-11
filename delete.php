@@ -13,7 +13,7 @@ if (isset($_GET['id']) ) {
     
     flash('success','Delete Successful..');
       ?>
-      <meta http-equiv='refresh' content='2.5; attendance.php'>
+      <meta http-equiv='refresh' content='0.5; attendance.php'>
       <?php
 
   }else{
