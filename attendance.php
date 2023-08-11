@@ -1,5 +1,29 @@
 <?php require 'inc/header.php'; ?>
 <?php if(isset($_SESSION['username'])):
+
+
+//Delete 
+
+if (isset($_GET['id']) ) {
+  
+  $id = $_GET['id'];
+  
+
+  $sql = "DELETE FROM participants WHERE id = '$id' LIMIT 1";
+  $query = mysqli_query($conn, $sql);
+
+  if ($query) {
+    
+    flash('success','Delete Successful..');
+      ?>
+      <meta http-equiv='refresh' content='2.5; attendance.php'>
+      <?php
+
+  }else{
+    die('An Error Occured');
+  }
+
+}
 //Mark Attendance
   if(isset($_GET['id']) && isset($_GET['day']) ){
     $id = ($_GET['id']);
@@ -103,6 +127,7 @@
                  <th><b>Day 1</b></th>
                  <th><b>Day 2</b></th>
                  <th><b>Day 3</b></th>
+                 <th><b>Action</b></th>
                </tr>
             </thead>
 
@@ -178,7 +203,10 @@
                             <a href="attendance.php?id2=<?=$id?>&name=<?=$full_name?>&day=day_three" class="badge bg-warning"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
                       <?php endif;?>
-                    </td>                    
+                    </td> 
+                   <td>
+                    <a href="attendance.php?id=<?=$id?>" class="btn btn-sm">Delete</a>
+                   </td>                 
 
                   </tr>
                   <?php
