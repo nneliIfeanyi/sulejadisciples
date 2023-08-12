@@ -33,10 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   $update = update_participant($conn,$id,$surname,$other_names,$phone,$local_assembly,$invited_by);
     if ($update) {
-       flash('success','Update Successful..');
+      //flash('success','Update Successful..');
       ?>
-      <meta http-equiv='refresh' content='1.5; attendance.php'>
+  
+      <script type="text/javascript">
+          alert('Changes Made Successfully');
+          history.go(-2);
+      
+  	  </script>
+
       <?php
+      
     }else{
     	die('Something went wrong');
     }

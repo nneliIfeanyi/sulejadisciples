@@ -11,9 +11,13 @@ if (isset($_GET['id']) ) {
 
   if ($query) {
     
-    flash('success','Delete Successful..');
+    //flash('success','Delete Successful..','alert alert-danger');
       ?>
-      <meta http-equiv='refresh' content='0.5; attendance.php'>
+      <script type="text/javascript">
+          alert('Delete Successfully');
+          history.go(-2);
+      
+      </script>
       <?php
 
   }else{

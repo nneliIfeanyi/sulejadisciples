@@ -30,36 +30,47 @@ $total_participants = $info;
             </div>
           </div>
         </div>
-          <table class="table table-light">
+           <table class="table table-light">
             <thead>
                <tr class="">
                 <th><b>S/N</b></th>
                  <th><b>Names</b></th>
+                 <th><b>Contact</b></th>
+                 <th><b>Denomination</b></th>
                  <th><b>Time Arrived</b></th>
+                 <th>Action</th>
                </tr>
             </thead>
 
              <tbody>
                <?php 
-                 if($info > 0) {
+                if($info > 0) {
                   $numbering = 1;
-                    while($result = mysqli_fetch_array($query)){
-                      $other_names = $result['other_names'];
-                      $full_name = $result['surname'] . " " . $result['other_names'];
-                      $name = $full_name;
-                      $arrival_time = $result['day_three'];
-                      $id = $result['id'];
+                  while($result = mysqli_fetch_array($query)){
+                    $other_names = $result['other_names'];
+                    $full_name = $result['surname'] . " " . $result['other_names'];
+                    $name = $full_name;
+                    $phone = $result['phone'];
+                    $local_assembly = $result['church'];
+                    $arrival_time = $result['day_one'];
+                    $id = $result['id'];
                   
                   ?>
                   <tr class="">
                     <th><?= $numbering; ?></th>
                     <td><?= $name; ?></td>
+                    <td>0<?= $phone ?> </td>
+                    <td><?=$local_assembly?> </td>
                     <td><?= $arrival_time; ?></td>
+                    <td>
+                    <a href="edit.php?id=<?=$id?>" class="fw-bold text-success me-2">Edit</a>
+                    <a href="delete.php?id=<?=$id?>" class="fw-bold text-danger">Delete</a>
+                   </td>  
                   </tr>
+
                   <?php
                   $numbering ++;
                   }
-                 
                  }else{
                   ?>
                    <tr>

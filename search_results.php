@@ -3,7 +3,7 @@
   $year = date('Y');
   if (isset($_GET['surname'])) {
     $search_input = trim($_GET['surname']);
-    $sql = "SELECT * FROM participants WHERE surname = '$search_input' AND year = '$year' ";
+    $sql = "SELECT * FROM participants WHERE surname LIKE '%$search_input%' OR other_names LIKE '%$search_input%'";
     $query = mysqli_query($conn, $sql);
   }
 
@@ -42,6 +42,7 @@
                  <th><b>Day 1</b></th>
                  <th><b>Day 2</b></th>
                  <th><b>Day 3</b></th>
+                 <th>Action</th>
                </tr>
             </thead>
 
@@ -114,7 +115,10 @@
                         </div>
                       <?php endif;?>
                     </td>                      
-
+                    <td>
+                    <a href="edit.php?id=<?=$id?>" class="fw-bold text-success me-2">Edit</a>
+                    <a href="delete.php?id=<?=$id?>" class="fw-bold text-danger">Delete</a>
+                   </td>
                   </tr>
                   <?php
                   $numbering ++;

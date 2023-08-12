@@ -26,9 +26,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $register = register_participant($conn,$surname,$other_names,$phone,$local_assembly,$invited_by,$reg_date,$reg_time,$year);
     if ($register) {
-       flash('success','Registration Successful.. Register Another');
+       flash('success','Registration Successful..');
       ?>
-      <meta http-equiv='refresh' content='2.5; attendance.php'>
+      <meta http-equiv='refresh' content='1.5; attendance.php'>
       <?php
       }
   }
