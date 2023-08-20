@@ -1,9 +1,9 @@
 <?php 
 
 $dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "disciples";
+$dbuser = "sulejadi_team";
+$dbpass = "Fishers_team2023";
+$dbname = "sulejadi_2023";
 
 if(!$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 {
