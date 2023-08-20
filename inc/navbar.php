@@ -23,7 +23,7 @@
           <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown">Resources</a>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><a href="articles.php" class="dropdown-item">Articles</a></li>
-            <li><a href="articles.php" class="dropdown-item">Audio</a></li>
+            <li><a href="audio.php" class="dropdown-item">Audio</a></li>
             <li><a href="articles.php" class="dropdown-item">Videos</a></li>
           </ul>
         </li>

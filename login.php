@@ -20,7 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
     if (login_pass($conn, $username, $password)) {
       $_SESSION['username'] = $username;
       flash('success', 'Login Successful');
-      redirect('register.php');
+      ?>
+      <meta http-equiv='refresh' content='1.5; register.php'>
+      <?php
      
     }else{
 
