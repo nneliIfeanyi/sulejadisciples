@@ -3,11 +3,12 @@
     <!-- Header -->
     <header class="header">
       <!-- Hero -->
-      <div class="hero text-primary pt-5 pb-4">
+      <div class="hero pt-5 pb-4">
         <div class="container-xl">
           <div class="row">
             <div class="col-12">
-              <h1 class="fw-semibold">Online Publications</h1>
+              <h1 class="fw-semibold text-primary">Online Publications</h1>
+               <h5><i class="fas fa-music text-primary mb-3"></i>  &nbsp;<span class="">Audio Messages</span></h5>
             </div>
           </div>
         </div>
@@ -38,168 +39,116 @@
         <div class="container">
     <div class="row mb-5">
       <div class="col-md-6 offset-md-3 d-flex flex-column align-items-center text-center">
-        <h5><i class="fas fa-music text-primary mb-3"></i>  &nbsp;<span class="badge bg-primary">Audio Messages</span>
-        </h5>
-        <h6 class="fw-semibold">Here are the recorded messages preached in Greater Bethesda 2023, with the theme: <br><span class="text-uppercase display-5 fw-bold text-primary">The Glory Of The Gospel</span></h6>
+       
+        <h6 class="fw-semibold p-3 lead">Here are the recorded messages preached in Greater Bethesda 2023, with the theme: <br><span class="text-uppercase display-5 fw-bold text-primary">The Glory Of The Gospel</span></h6>
       </div>
     </div>
-    <!--beats -->
+    <!-- AUDIO ROW -->
     <div class="row">
-      <h2 class="text-center"><span class="fw-semibold border-bottom">Day One</span></h2>
-      <div class="col-md-6 col-xl-4">
-        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
-          <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 1</span></h2>
-            <audio controls id="audio">
-              <source src="images/mp1.mp3" type="audio/mpeg">
-            </audio>
-            <!--<span class="d-block d-md-none" style="position: absolute;top: 18px;right: 22px;"><a href="download.html"><i class="fas fa-download"></i></a></span>-->
-          </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
-          </div>
-        </div>
-      </div>
-
        <div class="col-md-6 col-xl-4">
         <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 2</span></h2>
+          	<h2 class="h5 lead text-center"><span class="badge bg-primary">Mrs Ronke Motajo</span></h2>
             <audio controls id="audio">
-              <source src="images/mp2.mp3" type="audio/mpeg">
-            </audio>
-          
-          </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
-          </div>
-        </div>
-      </div>
-
-       <div class="col-md-6 col-xl-4">
-        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
-          <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 3</span></h2>
-            <audio controls id="audio">
-              <source src="images/mp3.mp3" type="audio/mpeg">
+              <source src="assets/audio/mrs-femi-talk-1.mp3" type="audio/mpeg">
             </audio>
      
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The womb as the base of the Gospel <span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 1</span></p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-xl-4">
-        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
+       <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 4</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Mrs Ronke Motajo</span></h2>
             <audio controls id="audio">
-              <source src="images/mp1.mp3" type="audio/mpeg">
+              <source src="assets/audio/mrs-femi-talk-2.mp3" type="audio/mpeg">
             </audio>
      
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The womb as the base of the Gospel <span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 2</span></p>
           </div>
         </div>
       </div>
-       <h2 class="text-center"><span class="fw-semibold">Day Two</span></h2>
+  
       <div class="col-md-6 col-xl-4">
         <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 1</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Mrs Ronke Motajo</span></h2>
             <audio controls id="audio">
-              <source src="images/mp2.mp3" type="audio/mpeg">
+              <source src="assets/audio/mrs-femi-talk-3.mp3" type="audio/mpeg">
             </audio>
+     
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The womb as the base of the Gospel <span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 3</span></p>
           </div>
         </div>
       </div>
 
+        <!-- BRO WISDOM EZE -->
+
       <div class="col-md-6 col-xl-4">
         <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 2</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Wisdom Eze</span></h2>
             <audio controls id="audio">
-              <source src="images/mp3.mp3" type="audio/mpeg">
+              <source src="assets/audio/bro-wisdom-3.mp3" type="audio/mpeg">
             </audio>
+     
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
-          </div>
-        </div>
-      </div>
-
-       <div class="col-md-6 col-xl-4">
-        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
-          <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 3</span></h2>
-            <audio controls id="audio">
-              <source src="images/mp2.mp3" type="audio/mpeg">
-            </audio>
-          </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The place of the Gospel on Earth<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 1</span></p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6 col-xl-4">
-        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
+       <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 4</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Wisdom Eze</span></h2>
             <audio controls id="audio">
-              <source src="images/mp3.mp3" type="audio/mpeg">
+              <source src="assets/audio/bro-wisdom-2.mp3" type="audio/mpeg">
             </audio>
+     
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The place of the Gospel on Earth<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 2</span></p>
           </div>
         </div>
       </div>
-      <h2 class="text-center"><span class="fw-semibold">Day Three</span></h2>
-       <div class="col-md-6 col-xl-4">
-        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
-          <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 1</span></h2>
-            <audio controls id="audio">
-              <source src="images/mp2.mp3" type="audio/mpeg">
-            </audio>
-          </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
-          </div>
-        </div>
-      </div>
-
+  
       <div class="col-md-6 col-xl-4">
         <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 2</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Wisdom Eze</span></h2>
             <audio controls id="audio">
-              <source src="images/mp3.mp3" type="audio/mpeg">
+              <source src="assets/audio/bro-wisdom-1.mp3" type="audio/mpeg">
             </audio>
+     
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The place of the Gospel on Earth<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 3</span></p>
           </div>
         </div>
       </div>
 
-       <div class="col-md-6 col-xl-4">
+<!-- BRO ISREAL'S AUDIO -->
+      <div class="col-md-6 col-xl-4">
         <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 3</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Isreal Egwu</span></h2>
             <audio controls id="audio">
-              <source src="images/mp2.mp3" type="audio/mpeg">
+              <source src="assets/audio/bro-isreal-3.mp3" type="audio/mpeg">
             </audio>
+     
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">Discipleship: The Bridge to Glory<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 1</span></p>
           </div>
         </div>
       </div>
@@ -207,16 +156,48 @@
       <div class="col-md-6 col-xl-4">
         <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
           <div class="p-1 bg-light">
-          	<h2 class="h5 lead text-center"><span class="badge bg-dark">Talk 4</span></h2>
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Isreal Egwu</span></h2>
             <audio controls id="audio">
-              <source src="images/mp3.mp3" type="audio/mpeg">
+              <source src="assets/audio/bro-isreal-2.mp3" type="audio/mpeg">
             </audio>
+     
           </div>
-          <div class="text-primary p-3">
-            <p class="lead fw-semibold fs-6">Track name is here</p>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">Discipleship: The Bridge to Glory<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 2</span></p>
           </div>
         </div>
       </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
+          <div class="p-1 bg-light">
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Isreal Egwu</span></h2>
+            <audio controls id="audio">
+              <source src="assets/audio/bro-isreal-1.mp3" type="audio/mpeg">
+            </audio>
+     
+          </div>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">Discipleship: The Bridge to Glory<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;">Day 3</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- BRO RICHARD -->
+      <div class="col-md-6 col-xl-4">
+        <div class="d-flex flex-column align-items-center bg-light mb-3 border rounded-3">
+          <div class="p-1 bg-light">
+            <h2 class="h5 lead text-center"><span class="badge bg-primary">Bro Richard</span></h2>
+            <audio controls id="audio">
+              <source src="assets/audio/bro-Richard.mp3" type="audio/mpeg">
+            </audio>
+     
+          </div>
+          <div class="p-3 position-relative">
+            <p class="lead fw-semibold fs-6">The Glory of the Gospel<span class="badge bg-primary" style="position: absolute;top: 0;right: 0;"></span></p>
+          </div>
+        </div>
+      </div>
+    
     </div>
   </div>
     </section>
