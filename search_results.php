@@ -1,6 +1,6 @@
 <?php require 'inc/header.php'; ?>
 <?php if(isset($_SESSION['username'])):
-  $year = date('Y');
+  $year = '2023';
   if (isset($_GET['surname'])) {
     $search_input = trim($_GET['surname']);
     $sql = "SELECT * FROM participants WHERE surname LIKE '%$search_input%' OR other_names LIKE '%$search_input%'";

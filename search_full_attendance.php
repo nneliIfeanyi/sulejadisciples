@@ -3,7 +3,7 @@
 
   if (isset($_GET['surname'])) {
     $search_input = trim($_GET['surname']);
-    $year = date('Y');
+    $year = '2023';
     $sql = "SELECT * FROM participants WHERE surname = '$search_input' AND year = '$year' AND day_one != '' AND day_two != '' AND day_three != '' ";
     $query = mysqli_query($conn, $sql);
   }

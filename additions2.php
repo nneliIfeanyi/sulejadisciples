@@ -22,7 +22,7 @@
 
              <tbody>
                <?php 
-                $year = date('Y');
+                $year = '2023';
                  $sql = "SELECT * FROM participants WHERE year = '$year' AND day_one = '' AND day_two != '' AND day_three != '' ";
                  $query = mysqli_query($conn, $sql);
                  $info = mysqli_num_rows($query);
