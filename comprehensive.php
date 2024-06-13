@@ -49,6 +49,7 @@ $total_participants = $info;
                  <th><b>Day one</b></th>
                  <th><b>Day two</b></th>
                  <th><b>Day three</b></th>
+                 <th>Action</th>
                </tr>
             </thead>
 
@@ -100,6 +101,9 @@ $total_participants = $info;
                        <?php else:?>
                            <a class="badge bg-light text-dark fw-semibold"><?=$day_three?></a>
                        <?php endif;?>
+                    </td>
+                    <td>
+                      <a href="send_sms.php" class="btn btn-sm btn-outline-primary">Send SMS</a>
                     </td>
                   </tr>
                   <?php
