@@ -12,7 +12,7 @@ if (isset($_POST['button'])) {
     $recipients = $_POST['telephone'];
     $message = $_POST['message'];
     $flash = 0;
-    $message = substr($_POST['message'], 0, 160);//Limit this message to one page.
+    $message = substr($_POST['message'], 0, 230);//Limit this message to one page.
     $Ebulksms = new Ebulksms();
 
 #Use the next line for HTTP POST with JSON
@@ -166,6 +166,7 @@ class Ebulksms {
                     if (stristr($result, 'SUCCESS')) {
                         ?>
                         <p style="border: 1px dotted #333; background: #33ff33; padding: 5px;">Message sent</p>
+                        <meta http-equiv="refresh" content="1; comprehensive.php">
                         <?php
                     } else {
                         ?>
@@ -186,7 +187,7 @@ class Ebulksms {
                    
                 <p>
                     <label>Sender name:
-                        <input name="sender_name" type="text" id="name" value="Integration" />
+                        <input name="sender_name" type="text" id="name" value="Disciples" />
                     </label>
                 </p>
                 <p>
