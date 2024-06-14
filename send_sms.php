@@ -12,7 +12,7 @@ if (isset($_POST['button'])) {
     $recipients = $_POST['telephone'];
     $message = $_POST['message'];
     $flash = 0;
-    $message = substr($_POST['message'], 0, 230);//Limit this message to one page.
+    $message = substr($_POST['message'], 0, 320);//Limit this message to one page.
     $Ebulksms = new Ebulksms();
 
 #Use the next line for HTTP POST with JSON
