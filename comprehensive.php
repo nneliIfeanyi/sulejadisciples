@@ -63,6 +63,7 @@ $total_participants = $info;
                       $name = $full_name;
                       $day_one = $result['day_one'];
                       $day_two = $result['day_two'];
+                      $phone = $result['phone'];
                       $day_three = $result['day_three'];
                       $id = $result['id'];
                   
@@ -103,7 +104,7 @@ $total_participants = $info;
                        <?php endif;?>
                     </td>
                     <td>
-                      <a href="send_sms.php" class="btn btn-sm btn-outline-primary">Send SMS</a>
+                      <a href="send_sms.php?id=<?=$phone;?>" class="btn btn-sm btn-outline-primary">Send SMS</a>
                     </td>
                   </tr>
                   <?php

@@ -20,7 +20,7 @@ if (isset($_POST['button'])) {
 #Uncomment the next line and comment the one above if you want to use HTTP POST with XML
     //$result = $Ebulksms->useXML($xml_url, $username, $apikey, $flash, $sendername, $message, $recipients);
 #Uncomment the next line and comment the ones above if you want to use simple HTTP GET
-    //$result = $Ebulksms->useHTTPGet($http_get_url, $username, $apikey, $flash, $sendername, $message, $recipients);
+   //$result = $Ebulksms->useHTTPGet($http_get_url, $username, $apikey, $flash, $sendername, $message, $recipients);
 }
 
 class Ebulksms {
@@ -105,48 +105,48 @@ class Ebulksms {
 //         return false;
 //     }
 
-// //Function to connect to SMS sending server using HTTP GET
-//     public function useHTTPGet($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
-//         $query_str = http_build_query(array('username' => $username, 'apikey' => $apikey, 'sender' => $sendername, 'messagetext' => $messagetext, 'flash' => $flash, 'recipients' => $recipients));
-//         $ch = curl_init();
-//         curl_setopt($ch, CURLOPT_URL, "{$url}?{$query_str}");
-//         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//         $output = curl_exec($ch);
-//         curl_close($ch);
-//         return $output;
-//         //return file_get_contents("{$url}?{$query_str}");
-//     }
+ //Function to connect to SMS sending server using HTTP GET
+    // public function useHTTPGet($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
+    //     $query_str = http_build_query(array('username' => $username, 'apikey' => $apikey, 'sender' => $sendername, 'messagetext' => $messagetext, 'flash' => $flash, 'recipients' => $recipients));
+    //     $ch = curl_init();
+    //     curl_setopt($ch, CURLOPT_URL, "{$url}?{$query_str}");
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //     $output = curl_exec($ch);
+    //     curl_close($ch);
+    //     return $output;
+    //     //return file_get_contents("{$url}?{$query_str}");
+    // }
 
-// //Function to connect to SMS sending server using HTTP POST
-//     private function doPostRequest($url, $arr_params, $headers = array('Content-Type: application/x-www-form-urlencoded')) {
-//         $response = array('code' => '', 'body' => '');
-//         $final_url_data = $arr_params;
-//         if (is_array($arr_params)) {
-//             $final_url_data = http_build_query($arr_params, '', '&');
-//         }
-//         $ch = curl_init();
-//         curl_setopt($ch, CURLOPT_URL, $url);
-//         curl_setopt($ch, CURLOPT_POSTFIELDS, $final_url_data);
-//         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//         curl_setopt($ch, CURLOPT_POST, 1);
-//         curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
-//         curl_setopt($ch, CURLOPT_VERBOSE, 1);
-//         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-//  try{
-//             $response['body'] = curl_exec($ch);
-//             $response['code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-//      if ($response['code'] != '200') {
-//                 throw new Exception("Problem reading data from $url");
-//             }
-//             curl_close($ch);
-//  } catch(Exception $e){
-//      echo 'cURL error: ' . $e->getMessage();
-//  }
-//         return $response['body'];
-//     }
+//Function to connect to SMS sending server using HTTP POST
+    private function doPostRequest($url, $arr_params, $headers = array('Content-Type: application/x-www-form-urlencoded')) {
+        $response = array('code' => '', 'body' => '');
+        $final_url_data = $arr_params;
+        if (is_array($arr_params)) {
+            $final_url_data = http_build_query($arr_params, '', '&');
+        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $final_url_data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
+        curl_setopt($ch, CURLOPT_VERBOSE, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+ try{
+            $response['body'] = curl_exec($ch);
+            $response['code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+     if ($response['code'] != '200') {
+                throw new Exception("Problem reading data from $url");
+            }
+            curl_close($ch);
+ } catch(Exception $e){
+     echo 'cURL error: ' . $e->getMessage();
+ }
+        return $response['body'];
+    }
 
-// }
+}
 ?>
 
 <!DOCTYPE html>
@@ -173,6 +173,10 @@ class Ebulksms {
                         <?php
                     }
                 }
+
+                if ($_GET['id']) {
+                	$phone = '0'.$_GET['id'];
+                }
                 ?>
 
              
@@ -187,12 +191,12 @@ class Ebulksms {
                 </p>
                 <p>
                     <label>Recipients
-                        <textarea name="telephone" id="telephone" cols="45" rows="2"></textarea>
+                        <textarea name="telephone" id="telephone" cols="45" rows="2"><?= $phone;?></textarea>
                     </label>
                 </p>
                 <p>
                     <label>Message
-                        <textarea name="message" id="message" cols="45" rows="5"></textarea>
+                        <textarea name="message" id="message" cols="45" rows="5">GOD'S GREAT VISITATION IS HERE AGAIN, (GREATER BETHESDA 2024) coming up 11-13th Aug 2024,9am daily @ Epiphany Hall behind former coca-cola depot field base Suleja. Pls plan to be part of this life transforming programme. Remain Blessed.</textarea>
                     </label>
                 </p>
                 <p>
