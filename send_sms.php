@@ -16,53 +16,53 @@ if (isset($_POST['button'])) {
     $Ebulksms = new Ebulksms();
 
 #Use the next line for HTTP POST with JSON
-    $result = $Ebulksms->useJSON($json_url, $username, $apikey, $flash, $sendername, $message, $recipients);
+//$result = $Ebulksms->useJSON($json_url, $username, $apikey, $flash, $sendername, $message, $recipients);
 #Uncomment the next line and comment the one above if you want to use HTTP POST with XML
     //$result = $Ebulksms->useXML($xml_url, $username, $apikey, $flash, $sendername, $message, $recipients);
 #Uncomment the next line and comment the ones above if you want to use simple HTTP GET
-   //$result = $Ebulksms->useHTTPGet($http_get_url, $username, $apikey, $flash, $sendername, $message, $recipients);
+   $result = $Ebulksms->useHTTPGet($http_get_url, $username, $apikey, $flash, $sendername, $message, $recipients);
 }
 
 class Ebulksms {
 
-    public function useJSON($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
-        $gsm = array();
-        $country_code = '234';
-        $arr_recipient = explode(',', $recipients);
-        foreach ($arr_recipient as $recipient) {
-            $mobilenumber = trim($recipient);
-            if (substr($mobilenumber, 0, 1) == '0') {
-                $mobilenumber = $country_code . substr($mobilenumber, 1);
-            } elseif (substr($mobilenumber, 0, 1) == '+') {
-                $mobilenumber = substr($mobilenumber, 1);
-            }
-            $generated_id = uniqid('int_', false);
-            $generated_id = substr($generated_id, 0, 30);
-            $gsm['gsm'][] = array('msidn' => $mobilenumber, 'msgid' => $generated_id);
-        }
-        $message = array(
-            'sender' => $sendername,
-            'messagetext' => $messagetext,
-            'flash' => "{$flash}",
-        );
+    // public function useJSON($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
+    //     $gsm = array();
+    //     $country_code = '234';
+    //     $arr_recipient = explode(',', $recipients);
+    //     foreach ($arr_recipient as $recipient) {
+    //         $mobilenumber = trim($recipient);
+    //         if (substr($mobilenumber, 0, 1) == '0') {
+    //             $mobilenumber = $country_code . substr($mobilenumber, 1);
+    //         } elseif (substr($mobilenumber, 0, 1) == '+') {
+    //             $mobilenumber = substr($mobilenumber, 1);
+    //         }
+    //         $generated_id = uniqid('int_', false);
+    //         $generated_id = substr($generated_id, 0, 30);
+    //         $gsm['gsm'][] = array('msidn' => $mobilenumber, 'msgid' => $generated_id);
+    //     }
+    //     $message = array(
+    //         'sender' => $sendername,
+    //         'messagetext' => $messagetext,
+    //         'flash' => "{$flash}",
+    //     );
 
-        $request = array('SMS' => array(
-                'auth' => array(
-                    'username' => $username,
-                    'apikey' => $apikey
-                ),
-                'message' => $message,
-                'recipients' => $gsm
-        ));
-        $json_data = json_encode($request);
-        if ($json_data) {
-            $response = $this->doPostRequest($url, $json_data, array('Content-Type: application/json'));
-            $result = json_decode($response);
-            return $result->response->status;
-        } else {
-            return false;
-        }
-    }
+    //     $request = array('SMS' => array(
+    //             'auth' => array(
+    //                 'username' => $username,
+    //                 'apikey' => $apikey
+    //             ),
+    //             'message' => $message,
+    //             'recipients' => $gsm
+    //     ));
+    //     $json_data = json_encode($request);
+    //     if ($json_data) {
+    //         $response = $this->doPostRequest($url, $json_data, array('Content-Type: application/json'));
+    //         $result = json_decode($response);
+    //         return $result->response->status;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
 //     public function useXML($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
 //         $country_code = '234';
@@ -105,17 +105,17 @@ class Ebulksms {
 //         return false;
 //     }
 
- //Function to connect to SMS sending server using HTTP GET
-    // public function useHTTPGet($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
-    //     $query_str = http_build_query(array('username' => $username, 'apikey' => $apikey, 'sender' => $sendername, 'messagetext' => $messagetext, 'flash' => $flash, 'recipients' => $recipients));
-    //     $ch = curl_init();
-    //     curl_setopt($ch, CURLOPT_URL, "{$url}?{$query_str}");
-    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    //     $output = curl_exec($ch);
-    //     curl_close($ch);
-    //     return $output;
-    //     //return file_get_contents("{$url}?{$query_str}");
-    // }
+//Function to connect to SMS sending server using HTTP GET
+    public function useHTTPGet($url, $username, $apikey, $flash, $sendername, $messagetext, $recipients) {
+        $query_str = http_build_query(array('username' => $username, 'apikey' => $apikey, 'sender' => $sendername, 'messagetext' => $messagetext, 'flash' => $flash, 'recipients' => $recipients));
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "{$url}?{$query_str}");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        return $output;
+        //return file_get_contents("{$url}?{$query_str}");
+    }
 
 //Function to connect to SMS sending server using HTTP POST
     private function doPostRequest($url, $arr_params, $headers = array('Content-Type: application/x-www-form-urlencoded')) {
@@ -133,31 +133,34 @@ class Ebulksms {
         curl_setopt($ch, CURLOPT_NOSIGNAL, 1);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
- try{
-            $response['body'] = curl_exec($ch);
-            $response['code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-     if ($response['code'] != '200') {
-                throw new Exception("Problem reading data from $url");
-            }
-            curl_close($ch);
- } catch(Exception $e){
-     echo 'cURL error: ' . $e->getMessage();
- }
+     try{
+                $response['body'] = curl_exec($ch);
+                $response['code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+         if ($response['code'] != '200') {
+                    throw new Exception("Problem reading data from $url");
+                }
+                curl_close($ch);
+     } catch(Exception $e){
+         echo 'cURL error: ' . $e->getMessage();
+     }
         return $response['body'];
     }
 
 }
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>EbulkSMS Send SMS API Sample</title>
     </head>
 
     <body>
-        <h2 style="text-align: center">Ebulk SMS Integration Sample Code</h2>
+        <h2 style="text-align: center">Ebulk SMS Integration</h2>
         <div style="border: 1px solid #333; padding: 5px 10px; width: 40%; margin: 0 auto">
             <form id="form1" name="form1" method="post" action="">
 
@@ -187,7 +190,7 @@ class Ebulksms {
                    
                 <p>
                     <label>Sender name:
-                        <input name="sender_name" type="text" id="name" value="Disciples" />
+                        <input name="sender_name" type="text" id="name" value="Suleja Disciples" />
                     </label>
                 </p>
                 <p>
@@ -197,7 +200,7 @@ class Ebulksms {
                 </p>
                 <p>
                     <label>Message
-                        <textarea name="message" id="message" cols="45" rows="5">GOD'S GREAT VISITATION IS HERE AGAIN, (GREATER BETHESDA 2024) coming up 11-13th Aug 2024,9am daily @ Epiphany Hall behind former coca-cola depot field base Suleja. Pls plan to be part of this life transforming programme. Remain Blessed.</textarea>
+                        <textarea name="message" id="message" cols="45" rows="5">GOD'S GREAT VISITATION IS HERE AGAIN, (GREATER BETHESDA 2024) coming up 8-10th Aug 2024,9am daily @ Epiphany Hall behind former coca-cola depot field base Suleja. Pls plan to be part of this life transforming programme. Remain Blessed.</textarea>
                     </label>
                 </p>
                 <p>

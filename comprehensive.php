@@ -46,9 +46,9 @@ $total_participants = $info;
                <tr class="">
                 <th><b>S/N</b></th>
                  <th><b>Names</b></th>
-                 <th><b>Day one</b></th>
+                 <!-- <th><b>Day one</b></th>
                  <th><b>Day two</b></th>
-                 <th><b>Day three</b></th>
+                 <th><b>Day three</b></th> -->
                  <th>Action</th>
                </tr>
             </thead>
@@ -82,14 +82,14 @@ $total_participants = $info;
                     </style>
                    <th><?= $numbering;?></th>
                     <td><?=$name?></td>
-                    <td>
+                    <!-- <td>
                       <?php if(empty($day_one)):?>
                        <a class="badge bg-danger">Absent</a>
                        <?php else:?>
                            <a class="badge bg-light text-dark fw-semibold"><?=$day_one?></a>
                        <?php endif;?>
-                    </td>
-                     <td>
+                    </td> -->
+                     <!-- <td>
                       <?php if(empty($day_two)):?>
                        <a class="badge bg-danger">Absent</a>
                        <?php else:?>
@@ -102,7 +102,7 @@ $total_participants = $info;
                        <?php else:?>
                            <a class="badge bg-light text-dark fw-semibold"><?=$day_three?></a>
                        <?php endif;?>
-                    </td>
+                    </td> -->
                     <td>
                       <a href="send_sms.php?id=<?=$phone;?>" class="btn btn-sm btn-outline-primary">Send SMS</a>
                     </td>
