@@ -21,7 +21,7 @@ class Attend
 
     public function getCountDay1()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance2 WHERE dayz = :dayz;");
         $this->db->bind(':dayz', 'day1');
 
         $this->db->resultset();
@@ -31,7 +31,7 @@ class Attend
 
     public function getCountDay2()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance2 WHERE dayz = :dayz;");
         $this->db->bind(':dayz', 'day2');
         $this->db->resultset();
 
@@ -40,7 +40,7 @@ class Attend
 
     public function getCountDay3()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance2 WHERE dayz = :dayz;");
         $this->db->bind(':dayz', 'day3');
         $this->db->resultset();
 
@@ -49,7 +49,7 @@ class Attend
 
     public function getDay1()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance2 WHERE dayz = :dayz;");
         $this->db->bind(':dayz', 'day1');
         $results = $this->db->resultset();
 
@@ -57,7 +57,7 @@ class Attend
     }
     public function getDay2()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance2 WHERE dayz = :dayz;");
         $this->db->bind(':dayz', 'day2');
         $results = $this->db->resultset();
 
@@ -65,7 +65,7 @@ class Attend
     }
     public function getDay3()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance2 WHERE dayz = :dayz;");
         $this->db->bind(':dayz', 'day3');
         $results = $this->db->resultset();
 
@@ -75,7 +75,7 @@ class Attend
     public function markAttendance($id, $name, $year, $day, $time)
     {
         // Prepare Query
-        $this->db->query("INSERT INTO attendance (user_id, fullname, yearz, dayz, timez) 
+        $this->db->query("INSERT INTO attendance2 (user_id, fullname, yearz, dayz, timez) 
       VALUES (:user_id, :fullname, :yearz, :dayz, :timez)");
 
         // Bind Values
@@ -96,7 +96,7 @@ class Attend
     //Get registered row count
     public function get_attendance_count($day, $year)
     {
-        $this->db->query("SELECT * FROM attendance WHERE dayz = :dayz AND yearz = :yearz");
+        $this->db->query("SELECT * FROM attendance2 WHERE dayz = :dayz AND yearz = :yearz");
         $this->db->bind(':dayz', $day);
         $this->db->bind(':yearz', $year);
 
@@ -113,7 +113,7 @@ class Attend
     // Find User By ID
     public function getUserById($id, $dayz, $yearz)
     {
-        $this->db->query("SELECT * FROM attendance WHERE user_id = :id AND dayz = :dayz AND dayz = :dayz");
+        $this->db->query("SELECT * FROM attendance2 WHERE user_id = :id AND dayz = :dayz AND dayz = :dayz");
         $this->db->bind(':id', $id);
         $this->db->bind(':dayz', $dayz);
         $this->db->bind(':yearz', $yearz);
