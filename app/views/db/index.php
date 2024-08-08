@@ -27,7 +27,7 @@ include APPROOT . '/views/inc/sidebar.php';
 
                             <div class="table-responsive">
 
-                                <table class="table datatable table-striped">
+                                <table class="table datatable table-striped" width="100%" id="example">
                                     <?php if (!empty($data['names'])) : ?>
                                         <thead>
                                             <tr class="">
@@ -47,7 +47,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                                 <tr class="">
                                                     <td><?= $data['numbering']; ?></td>
                                                     <td><?= $participant->fullname; ?></td>
-                                                    <td><?= $check->phone; ?></td>
+                                                    <td>0<?= $check->phone; ?></td>
                                                     <td><?= $check->church; ?></td>
                                                     <td>
                                                         <?= $participant->timez; ?>
@@ -91,7 +91,7 @@ include APPROOT . '/views/inc/sidebar.php';
 
                             <div class="table-responsive">
 
-                                <table class="table datatable table-striped">
+                                <table class="table datatable table-striped" width="100%" id="example">
                                     <?php if (!empty($data['names'])) : ?>
                                         <thead>
                                             <tr class="">
@@ -99,7 +99,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                                 <th><b>Names</b></th>
                                                 <th><b>Phone</b></th>
                                                 <th><b>Assembly</b></th>
-                                                <th><b>Day One</b></th>
+                                                <th><b>Day Two</b></th>
                                             </tr>
                                         </thead>
 
@@ -110,7 +110,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                                 <tr class="">
                                                     <td><?= $data['numbering']; ?></td>
                                                     <td><?= $participant->fullname; ?></td>
-                                                    <td><?= $check->phone; ?></td>
+                                                    <td>0<?= $check->phone; ?></td>
                                                     <td><?= $check->church; ?></td>
                                                     <td>
                                                         <?= $participant->timez; ?>
@@ -155,7 +155,7 @@ include APPROOT . '/views/inc/sidebar.php';
 
                             <div class="table-responsive">
 
-                                <table class="table datatable table-striped">
+                                <table class="table datatable table-striped" width="100%" id="example">
                                     <?php if (!empty($data['names'])) : ?>
                                         <thead>
                                             <tr class="">
@@ -163,7 +163,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                                 <th><b>Names</b></th>
                                                 <th><b>Phone</b></th>
                                                 <th><b>Assembly</b></th>
-                                                <th><b>Day One</b></th>
+                                                <th><b>Day Three</b></th>
                                             </tr>
                                         </thead>
 
@@ -175,7 +175,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                                 <tr class="">
                                                     <td><?= $data['numbering']; ?></td>
                                                     <td><?= $participant->fullname; ?></td>
-                                                    <td><?= $check->phone; ?></td>
+                                                    <td>0<?= $check->phone; ?></td>
                                                     <td><?= $check->church; ?></td>
                                                     <td>
                                                         <?= $participant->timez; ?>

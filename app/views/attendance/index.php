@@ -26,7 +26,7 @@ include APPROOT . '/views/inc/sidebar.php';
 
                             <div class="table-responsive">
 
-                                <table class="table datatable table-striped">
+                                <table class="table datatable table-striped" id="example" width="100%">
                                     <thead>
                                         <tr class="">
                                             <th><b>S/N</b></th>
@@ -117,7 +117,7 @@ include APPROOT . '/views/inc/sidebar.php';
 
                             <div class="table-responsive">
 
-                                <table class="table table-light">
+                                <table class="table datatable table-light" width="100%" id="example">
                                     <thead>
                                         <tr class="">
                                             <th><b>S/N</b></th>
@@ -209,7 +209,7 @@ include APPROOT . '/views/inc/sidebar.php';
 
                             <div class="table-responsive">
 
-                                <table class="table table-light">
+                                <table class="table table-light" width="100%" id="example">
                                     <thead>
                                         <tr class="">
                                             <th><b>S/N</b></th>
@@ -278,8 +278,6 @@ include APPROOT . '/views/inc/sidebar.php';
         </main>
     </div>
 <?php endif; ?>
-
-
 
 <?php
 include APPROOT . '/views/inc/footer.php';
