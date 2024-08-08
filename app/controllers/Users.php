@@ -27,6 +27,7 @@ class Users extends Controller
         $_POST['invited_by'] = 'Suleja Disciple';
       }
       $data = [
+        'fullname' => trim($_POST['surname']) . ' ' . trim($_POST['other_names']),
         'surname' => trim($_POST['surname']),
         'other_names' => trim($_POST['other_names']),
         'phone' => trim($_POST['phone']),
@@ -57,7 +58,7 @@ class Users extends Controller
       }
     } // End if post request
 
-    $num_rows = $this->userModel->get_registered_count(date('Y'));
+    $num_rows = $this->userModel->get_registered_count();
     $data = [
       'count' => $num_rows
     ];

@@ -24,7 +24,7 @@ include APPROOT . '/views/inc/sidebar.php';
           <div class="card card-body bg-light my-1">
             <div class="card-header mb-3">
               <h1 class="card-title">Greater Bethesda 2024 </h1>
-              <p class="card-text">A total of <span class="fw-bold text-underline">(<?php echo $data['count']; ?>)</span> registered, click <a href="">here</a> to view.</p>
+              <p class="card-text">A total of <span class="fw-bold text-underline">(<?php echo $data['count']; ?>)</span> registered in the Database, this includes previous years participants.</p>
             </div>
 
             <form action="" method="post" id="register_form">

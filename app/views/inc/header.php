@@ -16,6 +16,7 @@
 
   <link href="<?php echo URLROOT; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo URLROOT; ?>/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?php echo URLROOT; ?>/vendor/simple-datatables/style.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/bootstrap.css">-->
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/font-awesome.css" />

@@ -12,8 +12,8 @@ class User
   public function register($data)
   {
     // Prepare Query
-    $this->db->query("INSERT INTO participants (surname, other_names, phone, church, referee, reg_date, reg_time, year) 
-      VALUES (:surname, :other_names, :phone, :church, :referee, :reg_date, :reg_time, :year)");
+    $this->db->query("INSERT INTO participants (surname, other_names, phone, church, referee, reg_date, reg_time) 
+      VALUES (:surname, :other_names, :phone, :church, :referee, :reg_date, :reg_time)");
 
     // Bind Values
     $this->db->bind(':surname', $data['surname']);
@@ -23,7 +23,6 @@ class User
     $this->db->bind(':referee', $data['invited_by']);
     $this->db->bind(':reg_date', $data['reg_date']);
     $this->db->bind(':reg_time', $data['reg_time']);
-    $this->db->bind(':year', $data['year']);
 
     //Execute
     if ($this->db->execute()) {
@@ -32,13 +31,22 @@ class User
       return false;
     }
   }
+  public function lastId()
+  {
+    $this->db->query("SELECT * FROM participants");
+    $this->db->resultset();
+
+    if ($this->db->execute()) {
+      return $this->db->lastInsertId();
+    }
+  }
+
 
 
   //Get registered row count
-  public function get_registered_count($year)
+  public function get_registered_count()
   {
-    $this->db->query("SELECT * FROM participants WHERE year = :year");
-    $this->db->bind(':year', $year);
+    $this->db->query("SELECT * FROM participants");
 
     $this->db->resultset();
 
@@ -86,7 +94,7 @@ class User
   // Find User By ID
   public function getUserById($id)
   {
-    $this->db->query("SELECT * FROM users WHERE id = :id");
+    $this->db->query("SELECT * FROM participants WHERE id = :id");
     $this->db->bind(':id', $id);
 
     $row = $this->db->single();
