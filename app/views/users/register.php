@@ -37,7 +37,7 @@ include APPROOT . '/views/inc/sidebar.php';
                 <label for="other">Other Names</label>
               </div>
               <div class="form-floating mb-2">
-                <input id="whatsapp" type="number" name="phone" placeholder="whatsapp" class="form-control" required data-parsley-length="[0, 11]" data-parsley-trigger="keyup" value="">
+                <input id="whatsapp" type="number" name="phone" placeholder="whatsapp" class="form-control" data-parsley-length="[0, 11]" data-parsley-trigger="keyup" value="">
                 <label for="whatsapp">Whatsapp Number</label>
               </div>
               <div class="form-floating mb-2">
