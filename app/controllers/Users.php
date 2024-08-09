@@ -65,6 +65,23 @@ class Users extends Controller
     $this->view('users/register', $data);
   }
 
+  // Delete Participant
+  public function delete($id)
+  {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      //Execute
+      if ($this->userModel->deleteEntry($id)) {
+        // Redirect to login
+        flash('msg', 'You have successfully deleted ' . $_POST['name'], 'alert alert-danger');
+        redirect('attendance/index/' . $_POST['param']);
+      } else {
+        die('Something went wrong');
+      }
+    } else {
+      die('Something went wrong');
+    }
+  }
+
   public function login()
   {
     // Check if logged in

@@ -82,4 +82,61 @@ class Attendance extends Controller
             }
         }
     }
+
+    public function unmark($param)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            if ($param == 'day1') {
+                $data = [
+                    'user_id' => $_POST['user_id'],
+                    'yearz' => $_POST['yearz'],
+                    'fullname' => $_POST['fullname'],
+                    'dayz' => $param
+
+                ];
+                $success = $this->attendanceModel->unMarkAttendance($data['user_id'], $data['yearz'], $data['dayz']);
+                if ($success) {
+                    flash('msg', 'Attendance removed successfully for ' . $data['fullname'] . ' ' . $param);
+                    redirect('attendance/index/day1');
+                } else {
+                    die('Something went wrong');
+                }
+            } elseif ($param == 'day2') {
+                $data = [
+                    'user_id' => $_POST['user_id'],
+                    'yearz' => $_POST['yearz'],
+                    'fullname' => $_POST['fullname'],
+                    'dayz' => $param
+
+                ];
+                $success = $this->attendanceModel->unMarkAttendance($data['user_id'], $data['yearz'], $data['dayz']);
+                if ($success) {
+                    flash('msg', 'Attendance removed successfully for ' . $data['fullname'] . ' ' . $param);
+                    redirect('attendance/index/day2');
+                } else {
+                    die('Something went wrong');
+                }
+            } elseif ($param == 'day3') {
+                $data = [
+                    'user_id' => $_POST['user_id'],
+                    'yearz' => $_POST['yearz'],
+                    'fullname' => $_POST['fullname'],
+                    'dayz' => $param
+
+                ];
+                $success = $this->attendanceModel->unMarkAttendance($data['user_id'], $data['yearz'], $data['dayz']);
+                if ($success) {
+                    flash('msg', 'Attendance removed successfully for ' . $data['fullname'] . ' ' . $param);
+                    redirect('attendance/index/day3');
+                } else {
+                    die('Something went wrong');
+                }
+            } else {
+                die('Something went wrong');
+            }
+        } else {
+            redirect('attendance/index/' . $param);
+        }
+    }
 }

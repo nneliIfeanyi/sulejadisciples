@@ -93,6 +93,25 @@ class Attend
         }
     }
 
+    // Unmark Attendance
+    public function unMarkAttendance($id, $year, $day)
+    {
+        // Prepare Query
+        $this->db->query('DELETE FROM attendance2 WHERE user_id = :user_id AND yearz = :yearz AND dayz = :dayz');
+
+        // Bind Values
+        $this->db->bind(':user_id', $id);
+        $this->db->bind(':yearz', $year);
+        $this->db->bind(':dayz', $day);
+
+        //Execute
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //Get registered row count
     public function get_attendance_count($day, $year)
     {

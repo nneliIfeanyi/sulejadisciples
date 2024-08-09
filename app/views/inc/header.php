@@ -38,6 +38,19 @@
       animation-fill-mode: forwards;
     }
 
+    #msg-flash {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      z-index: 100;
+      animation-name: fade;
+      animation-duration: 3s;
+      animation-delay: 6s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
     @keyframes fade {
       from {
         z-index: 100;

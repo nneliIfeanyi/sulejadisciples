@@ -41,6 +41,22 @@ class User
     }
   }
 
+  // Delete Entry
+  public function deleteEntry($id)
+  {
+    // Prepare Query
+    $this->db->query('DELETE FROM participants WHERE id = :id');
+
+    // Bind Values
+    $this->db->bind(':id', $id);
+
+    //Execute
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 
   //Get registered row count

@@ -2,6 +2,7 @@
 require APPROOT . '/views/inc/header.php';
 require APPROOT . '/views/inc/navbar.php';
 include APPROOT . '/views/inc/sidebar.php';
+flash('msg');
 ?>
 <?php if ($data['param'] == 'day1') : ?>
     <div id="sec">
@@ -32,6 +33,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                             <th><b>S/N</b></th>
                                             <th><b>Names</b></th>
                                             <th><b>Day One</b></th>
+                                            <th><b>Action</b></th>
                                         </tr>
                                     </thead>
 
@@ -55,7 +57,41 @@ include APPROOT . '/views/inc/sidebar.php';
                                                         <button class="btn diasabled btn-success">Marked..</button>
                                                     <?php endif; ?>
                                                 </td>
+                                                <td>
+                                                    <?php if ($check) : ?>
+                                                        <form action="<?php echo URLROOT ?>/attendance/unmark/<?= $data['param']; ?>" method="POST">
+                                                            <input type="hidden" name="user_id" value="<?= $participant->id; ?>">
+                                                            <input type="hidden" name="fullname" value="<?= $participant->surname . ' ' . $participant->other_names; ?>">
+                                                            <input type="hidden" name="yearz" value="<?= date('Y'); ?>">
+                                                            <input type="submit" value="Unmark" class="btn btn-danger">
+                                                        </form>
+                                                    <?php else : ?>
+                                                        <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $participant->id; ?>"><i class="fa fa-trash"></i> Trash
+                                                        </button>
+                                                        <!--Delete entry Modal -->
+                                                        <div class="modal fade" id="deleteModal<?= $participant->id ?>">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-body">
+                                                                        This Action cannot be reveresed..
+                                                                        <p class="lead">Are you sure you want to delete <strong class="fw-bold"><?= $participant->surname . ' ' . $participant->other_names; ?></strong> from registered participants?</p>
+                                                                    </div>
+                                                                    <div class="modal-footer d-flex justify-content-between">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+                                                                        <form action="<?php echo URLROOT; ?>/users/delete/<?php echo $participant->id; ?>" method="post">
+                                                                            <input type="hidden" name="name" value="<?= $participant->surname . ' ' . $participant->other_names; ?>">
+                                                                            <input type="hidden" name="param" value="<?= $data['param']; ?>">
+                                                                            <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i> Yes, Continue</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </td>
                                             </tr>
+
+
                                             <!-- Response message div -->
                                             <div id="msg"></div>
                                             <script src="<?php echo URLROOT; ?>/js/jquery.js"></script>
@@ -123,6 +159,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                             <th><b>S/N</b></th>
                                             <th><b>Names</b></th>
                                             <th><b>Day Two</b></th>
+                                            <th><b>Action</b></th>
                                         </tr>
                                     </thead>
 
@@ -144,6 +181,38 @@ include APPROOT . '/views/inc/sidebar.php';
                                                         </form>
                                                     <?php else : ?>
                                                         <button class="btn diasabled btn-success">Marked..</button>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($check) : ?>
+                                                        <form action="<?php echo URLROOT ?>/attendance/unmark/<?= $data['param']; ?>" method="POST">
+                                                            <input type="hidden" name="user_id" value="<?= $participant->id; ?>">
+                                                            <input type="hidden" name="fullname" value="<?= $participant->surname . ' ' . $participant->other_names; ?>">
+                                                            <input type="hidden" name="yearz" value="<?= date('Y'); ?>">
+                                                            <input type="submit" value="Unmark" class="btn btn-danger">
+                                                        </form>
+                                                    <?php else : ?>
+                                                        <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $participant->id; ?>"><i class="fa fa-trash"></i> Trash
+                                                        </button>
+                                                        <!--Delete entry Modal -->
+                                                        <div class="modal fade" id="deleteModal<?= $participant->id ?>">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-body">
+                                                                        This Action cannot be reveresed..
+                                                                        <p class="lead">Are you sure you want to delete <strong class="fw-bold"><?= $participant->surname . ' ' . $participant->other_names; ?></strong> from registered participants?</p>
+                                                                    </div>
+                                                                    <div class="modal-footer d-flex justify-content-between">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+                                                                        <form action="<?php echo URLROOT; ?>/users/delete/<?php echo $participant->id; ?>" method="post">
+                                                                            <input type="hidden" name="name" value="<?= $participant->surname . ' ' . $participant->other_names; ?>">
+                                                                            <input type="hidden" name="param" value="<?= $data['param']; ?>">
+                                                                            <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i> Yes, Continue</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     <?php endif; ?>
                                                 </td>
                                             </tr>
@@ -215,6 +284,7 @@ include APPROOT . '/views/inc/sidebar.php';
                                             <th><b>S/N</b></th>
                                             <th><b>Names</b></th>
                                             <th><b>Day Three</b></th>
+                                            <th><b>Action</b></th>
                                         </tr>
                                     </thead>
 
@@ -236,6 +306,38 @@ include APPROOT . '/views/inc/sidebar.php';
                                                         </form>
                                                     <?php else : ?>
                                                         <button class="btn diasabled btn-success">Marked..</button>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($check) : ?>
+                                                        <form action="<?php echo URLROOT ?>/attendance/unmark/<?= $data['param']; ?>" method="POST">
+                                                            <input type="hidden" name="user_id" value="<?= $participant->id; ?>">
+                                                            <input type="hidden" name="fullname" value="<?= $participant->surname . ' ' . $participant->other_names; ?>">
+                                                            <input type="hidden" name="yearz" value="<?= date('Y'); ?>">
+                                                            <input type="submit" value="Unmark" class="btn btn-danger">
+                                                        </form>
+                                                    <?php else : ?>
+                                                        <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $participant->id; ?>"><i class="fa fa-trash"></i> Trash
+                                                        </button>
+                                                        <!--Delete entry Modal -->
+                                                        <div class="modal fade" id="deleteModal<?= $participant->id ?>">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-body">
+                                                                        This Action cannot be reveresed..
+                                                                        <p class="lead">Are you sure you want to delete <strong class="fw-bold"><?= $participant->surname . ' ' . $participant->other_names; ?></strong> from registered participants?</p>
+                                                                    </div>
+                                                                    <div class="modal-footer d-flex justify-content-between">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+                                                                        <form action="<?php echo URLROOT; ?>/users/delete/<?php echo $participant->id; ?>" method="post">
+                                                                            <input type="hidden" name="name" value="<?= $participant->surname . ' ' . $participant->other_names; ?>">
+                                                                            <input type="hidden" name="param" value="<?= $data['param']; ?>">
+                                                                            <button type="submit" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i> Yes, Continue</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     <?php endif; ?>
                                                 </td>
                                             </tr>
@@ -278,6 +380,7 @@ include APPROOT . '/views/inc/sidebar.php';
         </main>
     </div>
 <?php endif; ?>
+
 
 <?php
 include APPROOT . '/views/inc/footer.php';
