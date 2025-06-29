@@ -16,12 +16,12 @@
             </a>
             <ul id="attendance-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="<?php echo URLROOT ?>/attendance/index/day1">
-                        <i class="bi bi-circle"></i><span>Day one</span>
+                    <a href="<?php echo URLROOT ?>/pages/youth">
+                        <i class="bi bi-circle"></i><span>Youth Summit</span>
                     </a>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="<?php echo URLROOT ?>/attendance/index/day2">
                         <i class="bi bi-circle"></i><span>Day two</span>
                     </a>
@@ -31,7 +31,7 @@
                     <a href="<?php echo URLROOT ?>/attendance/index/day3">
                         <i class="bi bi-circle"></i><span>Day three</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li><!-- Attendance Nav -->
 

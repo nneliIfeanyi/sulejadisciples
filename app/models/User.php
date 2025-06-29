@@ -58,6 +58,14 @@ class User
     }
   }
 
+  public function get_all_registered()
+  {
+    $this->db->query("SELECT * FROM youth");
+
+    $rows = $this->db->resultset();
+    return $rows;
+  }
+
 
   // Find USer BY Email
   public function findUserByEmail($email)

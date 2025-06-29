@@ -2,10 +2,11 @@
 class Pages extends Controller
 {
 
+  public $userModel;
   public function __construct()
   {
+    $this->userModel = $this->model('User');
   }
-
   // Load Homepage
   public function index()
   {
@@ -41,5 +42,14 @@ class Pages extends Controller
       'info' => 'Only Admin is allowed to register participants.'
     ];
     $this->view('pages/error_page', $data);
+  }
+
+  public function youth()
+  {
+    $all_registered = $this->userModel->get_all_registered();
+    $data = [
+      'names' => $all_registered
+    ];
+    $this->view('pages/youth', $data);
   }
 }
