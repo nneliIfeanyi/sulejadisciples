@@ -12,7 +12,7 @@ class User
   public function register($data)
   {
     // Prepare Query
-    $this->db->query("INSERT INTO participants (surname, other_names, phone, church, referee, reg_date, reg_time) 
+    $this->db->query("INSERT INTO youth (surname, other_names, phone, church, residence, reg_date, reg_time) 
       VALUES (:surname, :other_names, :phone, :church, :referee, :reg_date, :reg_time)");
 
     // Bind Values
@@ -33,7 +33,7 @@ class User
   }
   public function lastId()
   {
-    $this->db->query("SELECT * FROM participants");
+    $this->db->query("SELECT * FROM youth");
     $this->db->resultset();
 
     if ($this->db->execute()) {
@@ -46,7 +46,7 @@ class User
   //Get registered row count
   public function get_registered_count()
   {
-    $this->db->query("SELECT * FROM participants");
+    $this->db->query("SELECT * FROM youth");
 
     $this->db->resultset();
 

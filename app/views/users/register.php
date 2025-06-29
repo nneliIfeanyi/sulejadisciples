@@ -38,7 +38,7 @@ include APPROOT . '/views/inc/sidebar.php';
               </div>
               <div class="form-floating mb-2">
                 <input id="whatsapp" type="number" name="phone" placeholder="whatsapp" class="form-control" required data-parsley-length="[0, 11]" data-parsley-trigger="keyup" value="">
-                <label for="whatsapp">Whatsapp Number</label>
+                <label for="whatsapp">Phone Number</label>
               </div>
               <div class="form-floating mb-2">
                 <input id="assembly" type="text" placeholder="Assembly" name="church" required class="form-control" value="">
@@ -47,7 +47,7 @@ include APPROOT . '/views/inc/sidebar.php';
               <p class="m-0" style="font-size: small;">leave empty if a member of suleja disples</p>
               <div class="form-floating">
                 <input id="referee" type="text" name="invited_by" placeholder="Referee" class="form-control" value="">
-                <label for="referee">Invited by</label>
+                <label for="referee">Residence Address</label>
               </div>
               <div class="row my-4">
                 <div class="col">

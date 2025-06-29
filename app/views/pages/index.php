@@ -65,7 +65,7 @@
             <a href="<?php echo URLROOT; ?>/pages" class="nav-link fw-semibold">Home</a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo URLROOT; ?>/pages/register" class="nav-link fw-semibold">Register</a>
+            <a href="<?php echo URLROOT; ?>/users/register" class="nav-link fw-semibold">Register</a>
           </li>
           <li class="nav-item">
             <a href="<?php echo URLROOT; ?>/pages/contact" class="nav-link btn btn-outline-primary fw-semibold px-4 mx-4">Contact</a>
@@ -79,9 +79,9 @@
     <div class="hero pt-5">
       <div class="container">
         <div class="pt-2 pb-3">
-          <p class="lead fw-semibold">Greater Bethesda 2024 <br><span class="badge bg-primary">theme</span></p>
-          <h1 class="display-1 pb-2 fw-bold">Behold His Glory</h1>
-          <p class=""><span class="" style="font-size: 12px;"> Thursday <span class="fw-bold"> 8th August</span> -- Saturday <span class="fw-bold"> 10th August</span> 2024</span></p>
+          <p class="lead fw-semibold">Youth Summit 2025 <br><span class="badge bg-primary">theme</span></p>
+          <h1 class="display-1 pb-2 fw-bold">God Has A Word For All The Youths In This City</h1>
+          <p class=""><span class="" style="font-size: 12px;"> Thursday <span class="fw-bold"> 29th June</span></p>
           <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-primary px-4">
             <i class="fas fa-pencil"></i> Registration
           </a>
@@ -156,18 +156,19 @@
       <div class="row text-center">
         <div class="col-lg-5">
           <div class="image-container mt-n6 mb-5 ">
-            <img src="<?php echo URLROOT; ?>/img/flyer2.jpg" alt="" class="img-fluid shadow rounded-3" />
+            <img src="<?php echo URLROOT; ?>/img/flyer3.jpeg" alt="" class="img-fluid shadow rounded-3" />
           </div>
         </div>
         <div class="col-lg-7">
           <div class="text-container text-white d-flex flex-column justify-content-center h-100 mb-5">
             <h2 class="fw-bold">Prepare To Be There</h2>
-            <h2 class="h4 fw-semibold badge">About Greater Bethesda</h2>
-            <p>
+            <h2 class="h4 fw-semibold badge">About Youth SUmmit</h2>
+            <p>This is the first inaugral Youth Summit, in the care of Suleja Disciples.</p>
+            <!-- <p>
               Tis an anual 3(three) days seminar retreat with the Lord, Divinely arranged and packaged for a greater visitation Of God than we saw in the pool of Bethesda...<span class="fw-bold">John 5:2-4</span>
-            </p>
+            </p> -->
             <div class="d-grid">
-              <a class="btn btn-primary " href="<?php echo URLROOT; ?>/pages/register">
+              <a class="btn btn-primary " href="<?php echo URLROOT; ?>/users/register">
                 <i class="fas fa-pencil"></i> Register Now</a>
             </div>
           </div>
