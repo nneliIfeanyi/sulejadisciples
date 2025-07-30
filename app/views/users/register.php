@@ -55,10 +55,11 @@ include APPROOT . '/views/inc/sidebar.php';
                 </div>
                 <div class="col mb-2 me-auto">
                   <a href="<?php echo URLROOT; ?>/pages" class="btn btn-outline-secondary"><i class="fa fa-home"></i> Home</a>
+
                 </div>
               </div>
             </form>
-
+            <button id="deleteBtn">Delete Item</button>
           </div>
         </div>
       </div>
@@ -66,12 +67,77 @@ include APPROOT . '/views/inc/sidebar.php';
   </main>
 </div>
 
-<!-- Response message div -->
-<div id="msg"></div>
-<script src="<?php echo URLROOT; ?>/js/jquery.js"></script>
-<script src="<?php echo URLROOT; ?>/js/parsley.min.js"></script>
+<?php
+include APPROOT . '/views/inc/footer.php';
+?>
+
 
 <script>
+  $('#register_form').on('submit', function(event) {
+    event.preventDefault();
+    Swal.fire({
+      title: 'Submitting...',
+      allowOutsideClick: false,
+      didOpen: () => Swal.showLoading()
+    });
+    let formData = $(this).serialize();
+    $.ajax({
+      url: '<?php echo URLROOT; ?>/users/register',
+      method: 'POST',
+      data: formData,
+      success: function(response) {
+        // Swal.fire('Success!', 'Registration Recorded Successfully.', 'success');
+        // setTimeout(() => {
+        //   location.reload();
+        // }, 2000)
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: response.message,
+          confirmButtonText: 'Okay'
+        }).then(() => {
+          // reload page on confirmation
+          location.reload();
+        });
+      },
+      error: function() {
+        Swal.fire('Error!', 'Something went wrong!', 'error');
+      }
+    });
+  });
+</script>
+<!-- <script>
+  $('#deleteBtn').on('click', function() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "This action cannot be undone!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform AJAX request
+        $.ajax({
+          url: '/delete-item.php', // your endpoint
+          type: 'POST',
+          data: {
+            id: 123
+          }, // data to send
+          success: function(response) {
+            Swal.fire('Deleted!', 'Your item was deleted.', 'success');
+          },
+          error: function() {
+            Swal.fire('Error!', 'Failed to delete item.', 'error');
+          }
+        });
+      }
+    });
+  });
+</script> -->
+
+<!-- <script>
   $('#register_form').parsley();
   $('#register_form').on('submit', function(event) {
     event.preventDefault();
@@ -104,7 +170,7 @@ include APPROOT . '/views/inc/sidebar.php';
     }
 
   });
-</script>
-<?php
-include APPROOT . '/views/inc/footer.php';
-?>
+</script> -->
+</body>
+
+</html>

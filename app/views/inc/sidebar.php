@@ -63,9 +63,9 @@
 
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed" href="<?php echo URLROOT ?>/db/bulk">
                 <i class="bi bi-box-arrow-in-right"></i>
-                <span>Login</span>
+                <span>Bulk Contacts</span>
             </a>
         </li><!-- End Login Page Nav -->
 

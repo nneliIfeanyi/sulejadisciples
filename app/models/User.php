@@ -66,6 +66,27 @@ class User
     return $rows;
   }
 
+  public function getBulk()
+    {
+        $this->db->query("SELECT DISTINCT phone FROM participants LIMIT 100 OFFSET 264");
+
+        $results = $this->db->resultset();
+
+        return $results;
+    }
+    public function getBulkNumRows()
+    {
+        $this->db->query("SELECT DISTINCT phone FROM participants");
+
+        $this->db->resultset();
+
+         if ($this->db->rowCount() > 0) {
+      return $this->db->rowCount();
+    } else {
+      return false;
+    }
+    }
+
 
   // Find USer BY Email
   public function findUserByEmail($email)

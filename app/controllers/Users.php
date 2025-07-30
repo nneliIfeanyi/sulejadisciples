@@ -40,21 +40,15 @@ class Users extends Controller
       ];
       $success = $this->userModel->register($data);
       if ($success) {
-        //$redirect = URLROOT . '/users/register';
-        //<meta http-equiv='refresh' content='2.1; $redirect'>
-        echo "
-                  <div class='flash-msg alert alert-success'>
-                    Resgistration Recorded Successfully.. </span>
-                </div>
-
-            ";
+        echo json_encode([
+          'status' => 'success',
+          'message' => 'Operation Successfull!'
+        ]);
       } else {
-        echo "
-                  <div class='flash-msg alert alert-danger'>
-                    Something went wrong.. </span>
-                </div>
-
-            ";
+        echo json_encode([
+          'status' => 'error',
+          'message' => 'Something is fishing!'
+        ]);
       }
     } // End if post request
 

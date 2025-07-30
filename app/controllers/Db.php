@@ -55,4 +55,18 @@ class Db extends Controller
             $this->view('db/index', $data);
         }
     }
+
+    //Bulk View
+     public function bulk()
+  {
+    $bulks = $this->userModel->getBulk();
+    $total = $this->userModel->getBulkNumRows();
+    $data = [
+      'bulks' => $bulks,
+      'total' => $total
+    ];
+
+    // Load about view
+    $this->view('db/bulk', $data);
+  }
 }
