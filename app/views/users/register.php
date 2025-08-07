@@ -86,7 +86,7 @@ include APPROOT . '/views/inc/footer.php';
       data: formData,
       success: function(response) {
         Swal.fire({
-          icon: 'info',
+          icon: 'success',
           title: '',
           text: response,
           confirmButtonText: 'Okay'

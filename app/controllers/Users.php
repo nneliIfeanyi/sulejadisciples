@@ -31,7 +31,7 @@ class Users extends Controller
       ];
       $success = $this->userModel->register($data);
       if ($success) {
-        echo $id;
+        echo 'Registration Successful!';
         exit();
       } else {
         echo 'Something is fishing!';
