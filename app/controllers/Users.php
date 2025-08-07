@@ -2,9 +2,11 @@
 class Users extends Controller
 {
   public $userModel;
+  public $attendModel;
   public function __construct()
   {
     $this->userModel = $this->model('User');
+    $this->attendModel = $this->model('Attend');
   }
 
   public function register()
@@ -39,7 +41,7 @@ class Users extends Controller
       }
     } // End if post request
 
-    $num_rows = $this->userModel->get_registered_count();
+    $num_rows = $this->attendModel->getCountDay1();
     $data = [
       'count' => $num_rows
     ];
