@@ -23,7 +23,7 @@ include APPROOT . '/views/inc/sidebar.php';
         <div class="col-md-9">
           <div class="card card-body bg-light my-1">
             <div class="card-header mb-3">
-              <h1 class="card-title m-0">Youth Summit 2025 </h1>
+              <h1 class="card-title m-0">GREATER BETHESDA 2025 </h1>
               <p class="card-text">A total of <span class="fw-bold text-underline">(<?php echo $data['count']; ?>)</span> registered in the Database, this includes previous years participants.</p>
             </div>
 
@@ -37,7 +37,7 @@ include APPROOT . '/views/inc/sidebar.php';
                 <label for="other">Other Names</label>
               </div>
               <div class="form-floating mb-2">
-                <input id="whatsapp" type="number" name="phone" placeholder="whatsapp" class="form-control" required data-parsley-length="[0, 11]" data-parsley-trigger="keyup" value="">
+                <input id="whatsapp" type="number" name="phone" placeholder="whatsapp" required class="form-control" data-parsley-length="[0, 11]" data-parsley-trigger="keyup" value="">
                 <label for="whatsapp">Phone Number</label>
               </div>
               <div class="form-floating mb-2">
@@ -53,13 +53,12 @@ include APPROOT . '/views/inc/sidebar.php';
                 <div class="col">
                   <input type="submit" id="submit" class="btn btn-primary px-5" value="Register">
                 </div>
-                <div class="col mb-2 me-auto">
+                <!-- <div class="col mb-2 me-auto">
                   <a href="<?php echo URLROOT; ?>/pages" class="btn btn-outline-secondary"><i class="fa fa-home"></i> Home</a>
 
-                </div>
+                </div> -->
               </div>
             </form>
-            <button id="deleteBtn">Delete Item</button>
           </div>
         </div>
       </div>
@@ -86,14 +85,10 @@ include APPROOT . '/views/inc/footer.php';
       method: 'POST',
       data: formData,
       success: function(response) {
-        // Swal.fire('Success!', 'Registration Recorded Successfully.', 'success');
-        // setTimeout(() => {
-        //   location.reload();
-        // }, 2000)
         Swal.fire({
-          icon: 'success',
-          title: 'Success!',
-          text: response.message,
+          icon: 'info',
+          title: '',
+          text: response,
           confirmButtonText: 'Okay'
         }).then(() => {
           // reload page on confirmation

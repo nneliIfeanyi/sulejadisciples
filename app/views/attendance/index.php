@@ -18,18 +18,14 @@ include APPROOT . '/views/inc/sidebar.php';
             <!-- End Page Title -->
             <section class="section dashboard">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-9 mx-auto">
                         <div class="card card-body bg-light my-1">
-                            <div class="card-header mb-3">
-                                <h1 class="card-title">Greater Bethesda 2024 </h1>
-                            </div>
-
+                            <!-- <h3 class="p-2">Total of <?php echo $data['day1Count'];?> in attendance</h3> -->
                             <div class="table-responsive">
-
-                                <table class="table datatable table-striped">
+                                <table class="table datatable table-striped" id="participants">
                                     <thead>
                                         <tr class="">
-                                            <th><b>S/N</b></th>
+                                            <th><b>#</b></th>
                                             <th><b>Names</b></th>
                                             <th><b>Day One</b></th>
                                         </tr>
@@ -109,15 +105,11 @@ include APPROOT . '/views/inc/sidebar.php';
             <!-- End Page Title -->
             <section class="section dashboard">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-9 mx-auto">
                         <div class="card card-body bg-light my-1">
-                            <div class="card-header mb-3">
-                                <h1 class="card-title">Greater Bethesda 2024 </h1>
-                            </div>
-
                             <div class="table-responsive">
 
-                                <table class="table table-light">
+                                <table class="table table-striped" id="participants">
                                     <thead>
                                         <tr class="">
                                             <th><b>S/N</b></th>
@@ -201,18 +193,14 @@ include APPROOT . '/views/inc/sidebar.php';
             <!-- End Page Title -->
             <section class="section dashboard">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-9 mx-auto">
                         <div class="card card-body bg-light my-1">
-                            <div class="card-header mb-3">
-                                <h1 class="card-title">Greater Bethesda 2024 </h1>
-                            </div>
-
                             <div class="table-responsive">
 
-                                <table class="table table-light">
+                                <table class="table table-striped" id="participants">
                                     <thead>
                                         <tr class="">
-                                            <th><b>S/N</b></th>
+                                            <th><b>#</b></th>
                                             <th><b>Names</b></th>
                                             <th><b>Day Three</b></th>
                                         </tr>
@@ -284,3 +272,6 @@ include APPROOT . '/views/inc/sidebar.php';
 <?php
 include APPROOT . '/views/inc/footer.php';
 ?>
+<script type="text/javascript">
+    $('#participants').DataTable();
+</script>

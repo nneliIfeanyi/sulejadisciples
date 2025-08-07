@@ -4,5 +4,5 @@
 <script src="<?php echo URLROOT; ?>/js/parsley.js"></script>
 <script src="<?php echo URLROOT; ?>/js/sweetalert2@11.js"></script>
 <script src="<?php echo URLROOT; ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo URLROOT; ?>/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="<?php echo URLROOT; ?>/vendor/DataTables/datatables.js"></script>
 <script src="<?php echo URLROOT; ?>/js/main.js"></script>

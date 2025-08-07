@@ -12,8 +12,8 @@ class User
   public function register($data)
   {
     // Prepare Query
-    $this->db->query("INSERT INTO youth (surname, other_names, phone, church, residence, reg_date, reg_time) 
-      VALUES (:surname, :other_names, :phone, :church, :referee, :reg_date, :reg_time)");
+    $this->db->query("INSERT INTO participants (surname, other_names, phone, church, referee, reg_date, reg_time, year) 
+      VALUES (:surname, :other_names, :phone, :church, :referee, :reg_date, :reg_time, :year)");
 
     // Bind Values
     $this->db->bind(':surname', $data['surname']);
@@ -23,6 +23,7 @@ class User
     $this->db->bind(':referee', $data['invited_by']);
     $this->db->bind(':reg_date', $data['reg_date']);
     $this->db->bind(':reg_time', $data['reg_time']);
+    $this->db->bind(':year', $data['year']);
 
     //Execute
     if ($this->db->execute()) {
@@ -33,7 +34,7 @@ class User
   }
   public function lastId()
   {
-    $this->db->query("SELECT * FROM youth");
+    $this->db->query("SELECT * FROM participants");
     $this->db->resultset();
 
     if ($this->db->execute()) {
@@ -46,7 +47,7 @@ class User
   //Get registered row count
   public function get_registered_count()
   {
-    $this->db->query("SELECT * FROM youth");
+    $this->db->query("SELECT * FROM participants");
 
     $this->db->resultset();
 
@@ -60,7 +61,7 @@ class User
 
   public function get_all_registered()
   {
-    $this->db->query("SELECT * FROM youth");
+    $this->db->query("SELECT * FROM participants");
 
     $rows = $this->db->resultset();
     return $rows;
@@ -68,7 +69,7 @@ class User
 
   public function getBulk()
     {
-        $this->db->query("SELECT DISTINCT phone FROM participants LIMIT 100 OFFSET 264");
+        $this->db->query("SELECT DISTINCT phone FROM participants");
 
         $results = $this->db->resultset();
 

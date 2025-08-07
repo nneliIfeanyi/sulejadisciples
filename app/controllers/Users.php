@@ -7,17 +7,8 @@ class Users extends Controller
     $this->userModel = $this->model('User');
   }
 
-  public function index()
-  {
-    redirect('welcome');
-  }
-
   public function register()
   {
-    // Check if logged in
-    // if (!$this->isLoggedIn()) {
-    //   redirect('users/login');
-    // }
 
     // Check if POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -26,6 +17,7 @@ class Users extends Controller
       if (empty($_POST['invited_by'])) {
         $_POST['invited_by'] = 'Suleja Disciple';
       }
+      
       $data = [
         'fullname' => trim($_POST['surname']) . ' ' . trim($_POST['other_names']),
         'surname' => trim($_POST['surname']),
@@ -36,19 +28,14 @@ class Users extends Controller
         'reg_date' => date('Y-m-d'),
         'reg_time' => date('h:ia'),
         'year' => date('Y')
-
       ];
       $success = $this->userModel->register($data);
       if ($success) {
-        echo json_encode([
-          'status' => 'success',
-          'message' => 'Operation Successfull!'
-        ]);
+        echo $id;
+        exit();
       } else {
-        echo json_encode([
-          'status' => 'error',
-          'message' => 'Something is fishing!'
-        ]);
+        echo 'Something is fishing!';
+        exit();
       }
     } // End if post request
 
@@ -63,7 +50,7 @@ class Users extends Controller
   {
     // Check if logged in
     if ($this->isLoggedIn()) {
-      redirect('posts');
+      redirect('users/register');
     }
 
     // Check if POST
@@ -136,7 +123,7 @@ class Users extends Controller
     $_SESSION['user_id'] = $user->id;
     $_SESSION['user_email'] = $user->email;
     $_SESSION['user_name'] = $user->name;
-    redirect('posts');
+    redirect('users/register');
   }
 
   // Logout & Destroy Session
@@ -157,5 +144,9 @@ class Users extends Controller
     } else {
       return false;
     }
+  }
+
+  public function myapi(){
+    $this->view('users/myapi');
   }
 }

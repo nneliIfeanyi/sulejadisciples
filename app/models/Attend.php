@@ -21,8 +21,9 @@ class Attend
 
     public function getCountDay1()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+        $this->db->query("SELECT * From attendance WHERE dayz = :dayz AND yearz = :yearz;");
         $this->db->bind(':dayz', 'day1');
+        $this->db->bind(':yearz', date('Y'));
 
         $this->db->resultset();
 
@@ -31,8 +32,9 @@ class Attend
 
     public function getCountDay2()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+         $this->db->query("SELECT * From attendance WHERE dayz = :dayz AND yearz = :yearz;");
         $this->db->bind(':dayz', 'day2');
+        $this->db->bind(':yearz', date('Y'));
         $this->db->resultset();
 
         return $this->db->rowCount();
@@ -40,8 +42,9 @@ class Attend
 
     public function getCountDay3()
     {
-        $this->db->query("SELECT * From attendance WHERE dayz = :dayz;");
+         $this->db->query("SELECT * From attendance WHERE dayz = :dayz AND yearz = :yearz;");
         $this->db->bind(':dayz', 'day3');
+        $this->db->bind(':yearz', date('Y'));
         $this->db->resultset();
 
         return $this->db->rowCount();
@@ -113,7 +116,7 @@ class Attend
     // Find User By ID
     public function getUserById($id, $dayz, $yearz)
     {
-        $this->db->query("SELECT * FROM attendance WHERE user_id = :id AND dayz = :dayz AND dayz = :dayz");
+        $this->db->query("SELECT * FROM attendance WHERE user_id = :id AND dayz = :dayz AND yearz = :yearz");
         $this->db->bind(':id', $id);
         $this->db->bind(':dayz', $dayz);
         $this->db->bind(':yearz', $yearz);
