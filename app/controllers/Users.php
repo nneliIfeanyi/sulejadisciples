@@ -19,7 +19,7 @@ class Users extends Controller
       if (empty($_POST['invited_by'])) {
         $_POST['invited_by'] = 'Suleja Disciple';
       }
-      
+
       $data = [
         'fullname' => trim($_POST['surname']) . ' ' . trim($_POST['other_names']),
         'surname' => trim($_POST['surname']),
@@ -41,7 +41,7 @@ class Users extends Controller
       }
     } // End if post request
 
-    $num_rows = $this->attendModel->getCountDay1();
+    $num_rows = $this->attendModel->getCountDay2();
     $data = [
       'count' => $num_rows
     ];
@@ -148,7 +148,8 @@ class Users extends Controller
     }
   }
 
-  public function myapi(){
+  public function myapi()
+  {
     $this->view('users/myapi');
   }
 }
