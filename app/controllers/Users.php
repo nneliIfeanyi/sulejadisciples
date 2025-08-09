@@ -41,7 +41,7 @@ class Users extends Controller
       }
     } // End if post request
 
-    $num_rows = $this->attendModel->getCountDay2();
+    $num_rows = $this->attendModel->getCountDay3();
     $data = [
       'count' => $num_rows
     ];
