@@ -45,13 +45,13 @@
                 <div class="invalid-feedback" id="surname_err"></div>
               </div>
               <div class="col-md-4">
-                <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
-                <input type="text" name="phone" class="form-control" id="phone" placeholder="10-11 digits" required>
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" name="phone" class="form-control" id="phone" placeholder="10-11 digits (optional)">
                 <div class="invalid-feedback" id="phone_err"></div>
               </div>
               <div class="col-md-4">
-                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                <input type="email" name="email" class="form-control" id="email" required>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email">
                 <div class="invalid-feedback" id="email_err"></div>
               </div>
 
@@ -93,7 +93,7 @@
               <div class="col-md-4">
                 <label style="font-size: smaller;" for="event_ongoing" class="form-label fw-semibold fst-italics">Event Ongoing <span class="text-danger">*</span></label>
                 <select id="event_ongoing" class="form-select" name="event_ongoing" required>
-                  <option value="">Choose...</option>
+
                   <option value="Youth Summit">Youth Summit</option>
                   <option value="Greater Bethesda">Greater Bethesda</option>
                   <option value="Couples Dinner">Couples Dinner</option>

@@ -51,17 +51,13 @@ class Youth_summit extends Controller
                 $data['surname_err'] = 'Please enter surname';
             }
 
-            // Validate phone
-            if (empty($data['phone'])) {
-                $data['phone_err'] = 'Please enter phone number';
-            } elseif (!preg_match('/^\d{10,11}$/', $data['phone'])) {
+            // Validate phone (optional - only validate if provided)
+            if (!empty($data['phone']) && !preg_match('/^\d{10,11}$/', $data['phone'])) {
                 $data['phone_err'] = 'Please enter a valid phone number (10-11 digits)';
             }
 
-            // Validate email
-            if (empty($data['email'])) {
-                $data['email_err'] = 'Please enter email';
-            } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            // Validate email (optional - only validate if provided)
+            if (!empty($data['email']) && !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $data['email_err'] = 'Please enter a valid email';
             }
 
@@ -182,15 +178,11 @@ class Youth_summit extends Controller
                 $data['surname_err'] = 'Please enter surname';
             }
 
-            if (empty($data['phone'])) {
-                $data['phone_err'] = 'Please enter phone number';
-            } elseif (!preg_match('/^\d{10,11}$/', $data['phone'])) {
+            if (!empty($data['phone']) && !preg_match('/^\d{10,11}$/', $data['phone'])) {
                 $data['phone_err'] = 'Please enter a valid phone number (10-11 digits)';
             }
 
-            if (empty($data['email'])) {
-                $data['email_err'] = 'Please enter email';
-            } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            if (!empty($data['email']) && !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 $data['email_err'] = 'Please enter a valid email';
             }
 
