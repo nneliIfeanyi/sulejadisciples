@@ -21,7 +21,7 @@
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h5 class="card-title mb-0">Fill The Form Below To Register Participants</h5>
-              <a href="<?= URLROOT ?>/registration/participants" class="btn btn-sm btn-outline-primary">View Participants</a>
+              <a href="<?= URLROOT ?>/youth_summit/participants" class="btn btn-sm btn-outline-primary">View Participants</a>
             </div>
 
             <!-- Alert Messages -->
@@ -139,7 +139,7 @@
     document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
 
     // Send AJAX request
-    fetch('<?= URLROOT ?>/users/register', {
+    fetch('<?= URLROOT ?>/youth_summit/register', {
         method: 'POST',
         body: formData
       })
@@ -219,18 +219,4 @@
     }
   });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php require APPROOT . '/views//inc/footer.php'; ?>
+<?php require APPROOT . '/views/inc/footer.php'; ?>
